@@ -47,7 +47,7 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.BOOLEAN
     },
     logo: {
-      type: DataTypes.BLOB
+      type: DataTypes.STRING
     },
   },
     // Here we'll pass a second "classMethods" object into the define method
@@ -67,4 +67,4 @@ module.exports = function (sequelize, DataTypes) {
   );
 
   return Race;
-}; 
+};
