@@ -12,13 +12,18 @@ module.exports = function(app) {
 
   // Each of the below routes just handles the HTML page that the user gets sent to.
 
-  // index route loads race.html
+  // This route is for the landing page/search page
   app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/race.html"));
   });
 
-  // whatever route loads whatever.html
-  app.get("/whatever", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/whatever.html"));
+  // Shows users the results of their race search
+  app.get("/results", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/results.handlebars"));
+  });
+
+  // This will get 
+  app.get("/something", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/something"));
   });
 };
