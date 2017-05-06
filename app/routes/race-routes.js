@@ -1,4 +1,4 @@
-var db = require("../models");
+var db = require("../app/models");
 
 module.exports = function(app) {
   app.get("/api/race", function(req, res) {
