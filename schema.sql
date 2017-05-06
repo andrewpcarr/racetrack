@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 create database racetrack_db;
 
 use racetrack_db;
@@ -44,4 +43,4 @@ CREATE TABLE users (
 	userID INTEGER NOT NULL AUTO_INCREMENT,
 	user_name VARCHAR(100) NOT NULL,
     image LONGBLOB,
-    ); 
+    );
