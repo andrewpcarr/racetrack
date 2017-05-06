@@ -1,7 +1,11 @@
 {
   "development": {
     "username": "root",
-    "password": "utB00tc@mp",
+<<<<<<< HEAD
+
+=======
+
+>>>>>>> 36191f12cb822d56869c45554d70410c98235397
     "database": "racetrack_db",
     "host": "localhost",
     "dialect": "mysql"
