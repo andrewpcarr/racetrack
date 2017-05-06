@@ -28,12 +28,14 @@ app.use(express.static("./public"));
 
 // Where we will require our routes.
 // These requirements will change.
-// require("./routes/html-routes.js")(app);
-// require("./routes/post-api-routes.js")(app);
-// require("./routes/author-api-routes.js")(app);
+require("./app/routes/html-routes.js")(app);
+require("./app/routes/post-api-routes.js")(app);
+require("./app/routes/race-routes.js")(app);
 
 // Syncing our sequelize models and then starting our express app
-db.sequelize.sync({ force: true }).then(function() {
+//TH NOTE--I removed the "force: true" from the sync so that it wouldn't keep clearing out 
+//our pre-seeded tables
+db.sequelize.sync({ }).then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });
