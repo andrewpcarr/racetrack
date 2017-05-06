@@ -16,11 +16,11 @@ bike_course, run_type, women_only) VALUES
 "Trail", false), 
 ("Lake Pflugerville", "Pflugerville", "TX", "USA", "Lake Pflugerville", "Sprint", "June", "Fresh", "Waves: From Shore", "Open", 
 "Trail", false), 
-("Kerrville Triathlon", "Kerrville", "TX", "USA", "Nimitz Lake", "Sprint", "September", "Fresh", "Waves: From Shore", "Open", 
+("Kerrville Triathlon Sprint", "Kerrville", "TX", "USA", "Nimitz Lake", "Sprint", "September", "Fresh", "Waves: From Shore", "Open", 
 "Road", false), 
 ("LavaMan", "Waikoloa", "HI", "USA", "Anaehoomalu Bay", "Intermediate", "April", "Ocean", "Waves: From Shore", "Open", 
 "Trail", false), 
-("Kerrville Triathlon", "Kerrville", "TX", "USA", "Nimitz Lake", "Half", "September", "Fresh", "Waves: From Shore", "Open", 
+("Kerrville Triathlon Half", "Kerrville", "TX", "USA", "Nimitz Lake", "Half", "September", "Fresh", "Waves: From Shore", "Open", 
 "Road", false); 
 
 
