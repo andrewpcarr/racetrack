@@ -54,6 +54,7 @@ module.exports = function (sequelize, DataTypes) {
     // This is for any additional configuration we want to give our models
     {
       // We're saying that we want our RAce to have Reviews
+      timestamps: false, 
       classMethods: {
         associate: function (models) {
           // Associating Race with Reviews
