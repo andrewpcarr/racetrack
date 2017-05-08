@@ -1,4 +1,10 @@
 body {
     background-image: url("./images/triathlon_water.jpeg");
     font-family: 'Abril Fatface';
+    height: auto;
+}
+
+.race-details, .race-sidebar {
+	border: 1px solid grey;
+	margin-top: 30px;
 }
