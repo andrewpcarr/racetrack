@@ -21,4 +21,4 @@ INSERT INTO Race (race_name, city, state, country, venue, distance, race_month, 
 ("LavaMan", "Waikoloa", "HI", "USA", "Anaehoomalu Bay", "Intermediate", "April", "Ocean", "Waves: From Shore", "Open",
 "Trail", false, "http://konabrewersfestival.com/wp-content/uploads/5Supporting_Lavaman_web.jpg"),
 ("Kerrville Triathlon Half", "Kerrville", "TX", "USA", "Nimitz Lake", "Half", "September", "Fresh", "Waves: From Shore", "Open",
-"Road", false);
+"Road", false, "https://raceraves.com/wp-content/uploads/2015/07/kerville-triathlon-festival-1-2.jpg");
