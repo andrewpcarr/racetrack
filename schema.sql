@@ -1,3 +1,5 @@
+create database racetrack_db;
+
 use racetrack_db;
 
 CREATE TABLE races (
@@ -14,7 +16,8 @@ CREATE TABLE races (
     bike_course VARCHAR(30),
     run_type VARCHAR(30),
     women_only BOOLEAN DEFAULT FALSE
-  );
+    );
+
 
 CREATE TABLE reviews (
     id INTEGER NOT NULL AUTO_INCREMENT,

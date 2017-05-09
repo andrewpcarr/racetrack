@@ -1,0 +1,18 @@
+body {
+    background-image: url("../images/triathlon_water.jpeg");
+}
+
+.modal-backdrop{
+    background-color: #96d1de;
+}
+.modal-body{
+    background-color: #7ac9d6;
+}
+
+.modal-header{
+    background-color: #a2ce9d;
+}
+
+.modal-footer{
+    background-color: #a2ce9d;
+}
