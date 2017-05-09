@@ -1,4 +1,35 @@
+<section class="results">
+<ul>
 {{#each Race}}
-<li>
-    {{this.burger_name}}
-quit
+<li class="race-item">
+  <div class="row">
+    <div class="race-img col-sm-3">
+      <img src="{{this.race.logo}}">
+    </div>
+    <div class="race-info col-sm-6">
+      <h2>{{this.race_name}}</h2>
+      <ul>
+        <li><span class="location"></span>{{this.city}}, {{this.state}}</li>
+        <li><span class="time"></span>{{this.month}}</li>
+        <li><span class="distance"></span>{{this.distance}}</li>
+      </ul>
+    </div>
+    <div class="race-review col-sm-3">
+      <div class="stars" data-review="{{this.overall}}">
+         <ul>
+           <li class="star"></li>
+           <li class="star"></li>
+           <li class="star"></li>
+           <li class="star"></li>
+           <li class="star"></li>
+         </ul>
+         <!--NICE TO HAVE
+            (x Reviews)
+         -->
+       </div>
+    </div>
+  </div>
+</li>
+{{/each}}
+</ul>
+</section>
