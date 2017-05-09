@@ -2,52 +2,66 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>RaceTrack</title>
+    <title>Racetrack | Online Reviews of Triathlons</title>
     <!--Add custom fonts right here -->
-      
+    <!-- Use openSans or something basic(Like Oswald) -->
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Montserrat" rel="stylesheet">
     <!-- ************************** -->
     <!-- using bootstrap -->
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">	
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Custom Theme -->
+    <link rel="stylesheet" type="text/css" href="css/race_style.css">
     <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
   </head>
   <body>
-    <nav class="navbar navbar-default navbar-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Racetrack</a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="#">Login</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
+    <!-- This page is simple. One button pulls a search modal! -->     
     <div class="container">
-      <div class="jumbotron text-center">
-        <H1> RACETRACK </H1>
-        <p> Look for triathlons and review them! <p>
+      <div class="row text-center">
+        <button type="button" class="btn btn-info btn-lg text-center" data-toggle="modal" data-target="#searchModal">CONNECT</button>
       </div>
-      <!--Search triathlons -->
-      <H1>Connect</H1>
-      <input type="string" id="searchRace" class="form-control" placeholder="Search triathlons!" required autofocus>
-      <button>  
-      <div class="footer navbar-fixed-bottom"> 
-        <a href="/api/races">/api/races</a>
-      </div>
+      <!-- The Search Modal -->
+      <div class="modal fade" id="searchModal" role="dialog">
+        <div class="modal-dialog">    
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Search Triathlons!</h4>
+            </div>
+            <div class="modal-body">
+              <li>
+                <ul>
+                  <input type="string" id="searchRace" class="form-control" placeholder="Search Race Name" required autofocus>
+                </ul>
+                <ul>
+                  <input type="string" id="searchLocation" class="form-control" placeholder="Search a city" required autofocus>
+                </ul>
+                <ul>
+                  <input type="string" id="searchRace" class="form-control" placeholder="Search by race length!" required autofocus>
+                </ul>
+                <ul>
+                  <input type="string" id="searchRace" class="form-control" placeholder="Search by Month" required autofocus>
+                </ul>
+                <ul>
+                  <input type="string" id="searchRace" class="form-control" placeholder="Start with a Swim?" required autofocus>
+                </ul>
+                <ul>
+                  <button type="submit" id="searchBTN" class="btn btn-primary btn-lg">SEARCH</button>
+                </ul>
+              </li>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-alert" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>   
     </div>
   </body>
 </html>
