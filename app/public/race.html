@@ -24,11 +24,7 @@
     <!-- This page is simple. One button pulls a search modal! -->     
     <div class="container">
       <div class="row text-center">
-        <button type="button" class="btn btn-info btn-lg" id="connect" data-toggle="modal" data-target="#searchModal">CONNECT</button>
-      </div>
-      <!-- Footer -->
-      <div class="footer navbar-fixed-bottom">
-        <a href="/api/races">/api/races</a>
+        <button type="button" class="btn btn-info btn-lg text-center" id="connect" data-toggle="modal" data-target="#searchModal">CONNECT</button>
       </div>
       <!-- The Search Modal -->
       <div class="modal fade" id="searchModal" role="dialog">
@@ -39,6 +35,8 @@
               <button type="button" class="close" data-dismiss="modal">&times;</button>
               <h4 class="modal-title">Search Triathlons!</h4>
             </div>
+            <!--Don't forget to set up each search term to be a separate search!  There is no need for the
+            user to fill in all of the possible choices. //-->
             <div class="modal-body">
               <li>
                 <ul>
@@ -48,10 +46,10 @@
                   <input type="string" id="searchLocation" class="form-control" placeholder="Search a city" required autofocus>
                 </ul>
                 <ul>
-                  <input type="string" id="searchLength" class="form-control" placeholder="Search by race length!" required autofocus>
+                  <input type="string" id="searchRace" class="form-control" placeholder="Search by race length!" required autofocus>
                 </ul>
                 <ul>
-                  <input type="string" id="searchMonth" class="form-control" placeholder="Search by Month" required autofocus>
+                  <input type="string" id="searchRace" class="form-control" placeholder="Search by Month" required autofocus>
                 </ul>
                 <ul>
                   <input type="string" id="searchRace" class="form-control" placeholder="Start with a Swim?" required autofocus>
@@ -62,7 +60,7 @@
               </li>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-alert" data-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
