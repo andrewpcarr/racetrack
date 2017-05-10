@@ -10,7 +10,7 @@
     <!-- ************************** -->
     <!-- using bootstrap -->
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">	
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <!-- Custom Theme -->
@@ -21,14 +21,14 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   </head>
   <body>
-    <!-- This page is simple. One button pulls a search modal! -->     
+    <!-- This page is simple. One button pulls a search modal! -->
     <div class="container">
       <div class="row text-center">
         <button type="button" class="btn btn-info btn-lg text-center" id="connect" data-toggle="modal" data-target="#searchModal">CONNECT</button>
       </div>
       <!-- The Search Modal -->
       <div class="modal fade" id="searchModal" role="dialog">
-        <div class="modal-dialog">    
+        <div class="modal-dialog">
           <!-- Modal content-->
           <div class="modal-content">
             <div class="modal-header">
@@ -38,33 +38,31 @@
             <!--Don't forget to set up each search term to be a separate search!  There is no need for the
             user to fill in all of the possible choices. //-->
             <div class="modal-body">
-              <li>
-                <ul>
-                  <input type="string" id="searchRace" class="form-control" placeholder="Search Race Name" required autofocus>
-                </ul>
-                <ul>
-                  <input type="string" id="searchLocation" class="form-control" placeholder="Search a city" required autofocus>
-                </ul>
-                <ul>
-                  <input type="string" id="searchRace" class="form-control" placeholder="Search by race length!" required autofocus>
-                </ul>
-                <ul>
-                  <input type="string" id="searchRace" class="form-control" placeholder="Search by Month" required autofocus>
-                </ul>
-                <ul>
-                  <input type="string" id="searchRace" class="form-control" placeholder="Start with a Swim?" required autofocus>
-                </ul>
-                <ul>
-                  <button type="submit" id="searchBTN" class="btn btn-primary btn-lg">SEARCH</button>
-                </ul>
-              </li>
+              <form class="search-form" action="/search" method="GET">
+								<div class="form-group">
+									<input type="text" id="searchRace" class="form-control" placeholder="Search Race Name" required autofocus>
+								</div>
+								<div class="form-group">
+									<input type="text" id="searchLocation" class="form-control" placeholder="Search a city" required autofocus>
+								</div>
+								<div class="form-group">
+									<input type="text" id="searchDistance" class="form-control" placeholder="Search by race length!" required autofocus>
+								</div>
+								<div class="form-group">
+									<input type="text" id="searchMonth" class="form-control" placeholder="Search by Month" required autofocus>
+								</div>
+								<div class="form-group">
+									<input type="text" id="searchSwim" class="form-control" placeholder="Start with a Swim?" required autofocus>
+								</div>
+								<button type="submit" id="searchBTN" class="btn btn-primary btn-lg">SEARCH</button>
+							</form>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-alert" data-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
-      </div>   
+      </div>
     </div>
   </body>
 </html>
