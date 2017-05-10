@@ -1,7 +1,14 @@
+/*Get in the background image */
 body {
     background-image: url("../images/triathlon_water.jpeg");
 }
 
+/* Minor button customization */
+#connect{
+    
+}
+
+/**** Make the modal look fancy ****/
 .modal-backdrop{
     background-color: #96d1de;
 }
@@ -16,3 +23,8 @@ body {
 .modal-footer{
     background-color: #a2ce9d;
 }
+
+.fade.in {
+    opacity: .91;
+}
+/***END CUSTOM MODAL CODE****/
