@@ -90,18 +90,138 @@
     <div class="modal text-center">
       <div class="modal-content">
         <h1>Leave your review!</h1>
-        <p>1. Race Atmosphere:</p>
-        <p>2. Swag:</p>
-        <p>3. Aid Stations:</p>
-        <p>4. Water Clarity:</p>
-        <p>5. Sighting:</p>
-        <p>6. Transition Layout and Signs:</p>
-        <p>7. Road Condition:</p>
-        <p>8. Hill Difficulty (Run):</p>
-        <p>9. Hill Difficulty (Bike):</p>
-        <p>10. Run Shade:</p>
-        <p>Overall Rating:</p>
-        <p>Would you recommend this race to a friend?</p>
+        <h2>Please rate each category from 1 (Poor) to 5 (Excellent).</h2>
+        <form>
+          <p>Name:</p>
+          <div class="form-group">
+            <input type="name" class="form-control" id="name" aria-describedby="name" placeholder="Ex: Frank Furter">
+          </div>
+          <p>1. Race Atmosphere:</p>
+          <div class="form-group">
+            <select class="form-control" id="race-atmosphere">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <p>2. Swag:</p>
+          <div class="form-group">
+            <select class="form-control" id="swag">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <p>3. Aid Stations:</p>
+          <div class="form-group">
+            <select class="form-control" id="aid-stations">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <p>4. Water Clarity:</p>
+          <div class="form-group">
+            <select class="form-control" id="water-clarity">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <p>5. Sighting:</p>
+          <div class="form-group">
+            <select class="form-control" id="sighting">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <p>6. Transition Layout and Signs:</p>
+          <div class="form-group">
+            <select class="form-control" id="transition">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <p>7. Road Condition:</p>
+          <div class="form-group">
+            <select class="form-control" id="road-condition">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <p>8. Hill Difficulty (Run) -- 1 (Easy) to 5 (Hard)</p>
+          <div class="form-group">
+            <select class="form-control" id="hills-run">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <p>9. Hill Difficulty (Bike) -- 1 (Easy) to 5 (Hard):</p>
+          <div class="form-group">
+            <select class="form-control" id="hills-bike">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <p>10. Run Shade -- 1 (Little) to 5 (Lots):</p>
+          <div class="form-group">
+            <select class="form-control" id="shade">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <p>Overall Rating:</p>
+          <div class="form-group">
+            <select class="form-control" id="overall">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <p>Would you recommend this race to a friend?</p>
+          <div class="form-group">
+            <select class="form-control" id="recommend">
+              <option>Hell yeah!</option>
+              <option>No way!</option>
+            </select>
+          </div>
+          <p>Race Highlight:</p>
+          <div class="form-group highlight">
+            <textarea class="form-control" id="highlight" rows="2"></textarea>
+          </div>
+          <p>General Comments/Review:</p>
+          <div class="form-group comments">
+            <textarea class="form-control" id="comments" rows="6"></textarea>
+          </div>
+        </form>
         <span><button type="button" class="btn btn-warning review-race">Submit Review!</button></span>
         <span><button type="button" class="btn btn-secondary review-race cancel">Cancel</button></span>
       </div>
