@@ -20,24 +20,13 @@ module.exports = function(app) {
   });
 
   // Shows users the results of their race search
-  app.get("/search" +
-    querystring.stringify({
-      //race name
-      rn: req.body.race_name,
-      //city
-      c: req.body.city,
-      //distance
-      d: req.body.distance,
-      //month
-      m: req.body.month,
-      //swim_start
-      sw: req.body.swim_start
-    }), function(req,res) {
-      db.Races.findAll({
+  app.get("/search", function(req,res) {
+    console.log(req.body);
+      db.Race.findAll({
         where: {
         $or: [
           {
-            racename: {
+            race_name: {
               $eq:req.body.race_name
             }
           },
@@ -52,8 +41,8 @@ module.exports = function(app) {
           }
         },
         {
-          month: {
-            $eq: req.body.month
+          race_month: {
+            $eq: req.body.race_month
           }
         },
         {
@@ -64,13 +53,14 @@ module.exports = function(app) {
       ]
         }
     }).then(function(data) {
-        res.render('results', {race:data});
+        console.log('Render Race');
+        res.render('results', {Race:data});
       });
     });
 
   // This will get
   app.get("/race/:id", function(req, res) {
-    db.Races.findOne({
+    db.Race.findOne({
       where: {
         id: req.params.id
       }

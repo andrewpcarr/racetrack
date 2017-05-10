@@ -7,7 +7,9 @@
       <img src="{{this.race.logo}}">
     </div>
     <div class="race-info col-sm-6">
-      <h2>{{this.race_name}}</h2>
+      <a href="/race/{{this.id}}">
+        <h2>{{this.race_name}}</h2>
+      </a>
       <ul>
         <li><span class="location"></span>{{this.city}}, {{this.state}}</li>
         <li><span class="time"></span>{{this.month}}</li>
