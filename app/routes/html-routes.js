@@ -23,50 +23,50 @@ module.exports = function(app) {
   app.get("/search" +
     querystring.stringify({
       //race name
-      rn: req.params.race_name,
+      rn: req.body.race_name,
       //city
-      c: req.params.location,
+      c: req.body.city,
       //distance
-      d: req.params.distance,
+      d: req.body.distance,
       //month
-      m: req.params.month,
+      m: req.body.month,
       //swim_start
-      sw: req.params.swim_start
-    }), function(req,res){
+      sw: req.body.swim_start
+    }), function(req,res) {
       db.Races.findAll({
         where: {
-          $or: [
-            {
-              racename: {
-                $eq:req.params.race_name
-              }
-            },
-            {
-             city: {
-               $eq: req.params.city
-              }
-           },
-           {
-            distance: {
-              $eq: req.params.distance
-          },
+        $or: [
           {
-            month: {
-              $eq: req.params.month
+            racename: {
+              $eq:req.body.race_name
             }
           },
           {
-            swim_start:{
-              $eq: req.params.swim_start
+           city: {
+             $eq: req.body.city
             }
+         },
+         {
+          distance: {
+            $eq: req.body.distance
           }
-        ];
+        },
+        {
+          month: {
+            $eq: req.body.month
+          }
+        },
+        {
+          swim_start:{
+            $eq: req.body.swim_start
+          }
         }
-      }).then(function(data) {
+      ]
+        }
+    }).then(function(data) {
         res.render('results', {race:data});
       });
     });
-  });
 
   // This will get
   app.get("/race/:id", function(req, res) {
@@ -74,7 +74,7 @@ module.exports = function(app) {
       where: {
         id: req.params.id
       }
-    }).then(functin(data){
+    }).then(function(data){
       res.render('race-details', {race: data});
     });
   });
