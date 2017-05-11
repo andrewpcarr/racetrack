@@ -18,26 +18,15 @@ module.exports = function(app) {
   app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/race.html"));
   });
-
+  
   // Shows users the results of their race search
-  app.get("/search" +
-    querystring.stringify({
-      //race name
-      rn: req.body.race_name,
-      //city
-      c: req.body.city,
-      //distance
-      d: req.body.distance,
-      //month
-      m: req.body.month,
-      //swim_start
-      sw: req.body.swim_start
-    }), function(req,res) {
-      db.Races.findAll({
+  app.get("/search", function(req,res) {
+    console.log(req.body);
+      db.Race.findAll({
         where: {
         $or: [
           {
-            racename: {
+            race_name: {
               $eq:req.body.race_name
             }
           },
@@ -52,8 +41,8 @@ module.exports = function(app) {
           }
         },
         {
-          month: {
-            $eq: req.body.month
+          race_month: {
+            $eq: req.body.race_month
           }
         },
         {
@@ -64,18 +53,25 @@ module.exports = function(app) {
       ]
         }
     }).then(function(data) {
-        res.render('results', {race:data});
+        console.log('Render Race');
+        res.render('results', {Race:data});
       });
     });
 
-  // This will get
+
   app.get("/race/:id", function(req, res) {
-    db.Races.findOne({
+    db.Race.findAll({
       where: {
-        id: req.params.id
-      }
+        id: req.params.id,
+      },
+      include: [db.Review]
     }).then(function(data){
-      res.render('race-details', {race: data});
+        var raceObj = {
+            Race: data
+        }
+        console.log("Are we getting any results? " + JSON.stringify(raceObj)); 
+      res.render("race-details", raceObj);
     });
-  });
-};
+  }); 
+
+}; 
