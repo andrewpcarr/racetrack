@@ -18,10 +18,15 @@ module.exports = function(app) {
   app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/race.html"));
   });
-  
+
   // Shows users the results of their race search
-  app.get("/search", function(req,res) {
-    console.log(req.body);
+  app.post("/search", function(req,res) {
+    if (req.body.race_name === '' && req.body.race_name === '' && req.body.city === '' && req.body.distance === '' && req.body.race_month === '' && req.body.swim_start === '') {
+      // show em all!
+      db.Race.findAll({}).then(function(data) {
+          res.render('results', {Race:data});
+        });
+    } else {
       db.Race.findAll({
         where: {
         $or: [
@@ -53,9 +58,9 @@ module.exports = function(app) {
       ]
         }
     }).then(function(data) {
-        console.log('Render Race');
         res.render('results', {Race:data});
       });
+    }
     });
 
   // This will get
@@ -65,7 +70,7 @@ module.exports = function(app) {
         id: req.params.id
       }
     }).then(function(data){
-      res.render('race-details', {race: data});
+      res.render('race', {race: data});
     });
   });
-}; 
+};
