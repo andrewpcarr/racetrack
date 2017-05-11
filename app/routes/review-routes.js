@@ -30,22 +30,7 @@ module.exports = function (app) {
             res.json(dbReview); 
         })
     });
+}; 
 
-
-app.get("/race/:id", function(req, res) {
-    db.Race.findAll({
-      where: {
-        id: req.params.id,
-      },
-      include: [db.Review]
-    }).then(function(data){
-        var raceObj = {
-            Race: data
-        }
-        console.log("Are we getting any results? " + JSON.stringify(raceObj)); 
-      res.render("race-details", raceObj);
-    });
-  }); 
-};
 
 
