@@ -20,19 +20,28 @@ module.exports = function(app) {
   });
 
   // Shows users the results of their race search
-  app.get("/search", function(req, res) {
-    console.log(req.body);
-    db.Race.findAll({
-      where: {
-        $or: [{
-          race_name: {
-            $eq: req.body.race_name
-          }
-        }, {
-          city: {
-            $eq: req.body.city
-          }
-        }, {
+
+  app.post("/search", function(req,res) {
+    if (req.body.race_name === '' && req.body.race_name === '' && req.body.city === '' && req.body.distance === '' && req.body.race_month === '' && req.body.swim_start === '') {
+      // show em all!
+      db.Race.findAll({}).then(function(data) {
+          res.render('results', {Race:data});
+        });
+    } else {
+      db.Race.findAll({
+        where: {
+        $or: [
+          {
+            race_name: {
+              $eq:req.body.race_name
+            }
+          },
+          {
+           city: {
+             $eq: req.body.city
+            }
+         },
+         {
           distance: {
             $eq: req.body.distance
           }
@@ -47,11 +56,10 @@ module.exports = function(app) {
         }]
       }
     }).then(function(data) {
-      console.log('Render Race');
       res.render('results', { Race: data });
-    });
+      });
+    }
   });
-
 
   app.get("/race/:id", function(req, res) {
     db.Race.findAll({
@@ -67,8 +75,6 @@ module.exports = function(app) {
       res.render("race-details", raceObj);
     });
   });
-
-};
 
 app.post("/race/:id", function(req, res) {
   console.log(req.body);
@@ -89,7 +95,7 @@ app.post("/race/:id", function(req, res) {
     comments: req.body.comments,
     RaceId: req.params.id,
   }).then(function() {
-    res.redirect('/race/:id'); >>> >>> > andrew
+    res.redirect('/race/:id');
   });
 });
 
