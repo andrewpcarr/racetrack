@@ -5,9 +5,19 @@ body {
 
 /* Minor button customization */
 #connect{
-/*Insert whatever it takes to make the 
-button stay in the middle of the page
-here */
+    margin-top: 33%;
+}
+
+/* Custom CSS for header on landing page */
+.Landing-Header{  
+    background: linear-gradient(to bottom, rgba(175, 255, 255, 222), rgba(0, 0, 0, 0));
+    opacity: .84;
+}
+/* Header Text Customization */
+#header-text{
+    opacity: 1;
+    color: black;
+    ;
 }
 
 /**** Make the modal look fancy ****/
