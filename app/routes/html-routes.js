@@ -18,7 +18,7 @@ module.exports = function(app) {
   app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/race.html"));
   });
-
+  
   // Shows users the results of their race search
   app.get("/search", function(req,res) {
     console.log(req.body);
@@ -68,4 +68,4 @@ module.exports = function(app) {
       res.render('race-details', {race: data});
     });
   });
-};
+}; 
