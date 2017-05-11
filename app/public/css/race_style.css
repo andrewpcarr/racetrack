@@ -3,11 +3,6 @@ body {
     background-image: url("../images/triathlon_water.jpeg");
 }
 
-/* Minor button customization */
-#connect{
-    margin-top: 33%;
-}
-
 /* Custom CSS for header on landing page */
 .Landing-Header{  
     background: linear-gradient(to bottom, rgba(175, 255, 255, 222), rgba(0, 0, 0, 0));
@@ -20,23 +15,3 @@ body {
     ;
 }
 
-/**** Make the modal look fancy ****/
-.modal-backdrop{
-    background-color: #96d1de;
-}
-.modal-body{
-    background-color: #7ac9d6;
-}
-
-.modal-header{
-    background-color: #a2ce9d;
-}
-
-.modal-footer{
-    background-color: #a2ce9d;
-}
-
-.fade.in {
-    opacity: .91;
-}
-/***END CUSTOM MODAL CODE****/
