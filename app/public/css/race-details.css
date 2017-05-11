@@ -149,3 +149,10 @@ label.star:before {
 #comments {
   width: 700px;
 }
+
+/* CSS for the Reviews display */
+.review-lbl {
+  font-size: 16px; 
+  display: inline-block; 
+  margin: 5px; 
+}
