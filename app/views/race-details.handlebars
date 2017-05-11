@@ -33,13 +33,19 @@
     </div>
     <div class="row">
       <div class="col-md-8 race-details">
-        <img src="logo-test.jpg">
-        <h1>Race Name</h1>
-        <p id="overall-rating">Overall Rating:</p>
-        <p><i class="fa fa-map-marker" aria-hidden="true"></i> Location:</p>
-        <p><i class="fa fa-calendar" aria-hidden="true"></i> Date/Time of Year:</p>
-        <p><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Distance</p>
+        <!--img src="logo-test.jpg"-->
+        {{#each Race}}
+        <h1>{{this.race_name}}</h1>
+       {{/each}}
+       {{#each Total}}
+        <p id="overall-rating">Overall Rating: {{this.totalScore}} </p> 
+        {{/each}}
+        {{#each Race}}
+        <p><i class="fa fa-map-marker" aria-hidden="true"></i> {{this.city}}</p>
+        <p><i class="fa fa-calendar" aria-hidden="true"></i> {{this.race_month}}</p>
+        <p><i class="fa fa-long-arrow-right" aria-hidden="true"></i> {{this.distance}}</p>
         <button type="button" class="btn btn-warning review-race">Review this race!</button>
+        {{/each}}
       </div>
       <div class="col-md-0"></div>
       <div class="col-md-3 race-sidebar">
@@ -64,9 +70,9 @@
       <div class="col-lg-8 review-holder">
         This is for reviews
                 {{#each Race}}
-        <li>
+        <ul>
           {{this.race_name}}
-        </li>
+        </ul>
         {{#each this.Reviews}}
         <li>
           {{this.highlight}}
@@ -222,5 +228,4 @@
       <a href="/api/races">/api/races</a>
     </div>
   </div>
-  <!-- Race-details JS -->
-  <script type="text/javascript" src='js/race.js'></script>
+
