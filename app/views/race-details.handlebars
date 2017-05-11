@@ -1,0 +1,226 @@
+
+  <!-- Nav Bar -->
+  <div class="navbar navbar-default navbar-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">RaceTrack</a>
+      </div>
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active"><a href="#">Home</a></li>
+        </ul>
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+  </div>
+  <!-- Main body -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Enter a race, keyword, or location">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button">Search Again</button>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8 race-details">
+        <img src="logo-test.jpg">
+        <h1>Race Name</h1>
+        <p id="overall-rating">Overall Rating:</p>
+        <p><i class="fa fa-map-marker" aria-hidden="true"></i> Location:</p>
+        <p><i class="fa fa-calendar" aria-hidden="true"></i> Date/Time of Year:</p>
+        <p><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Distance</p>
+        <button type="button" class="btn btn-warning review-race">Review this race!</button>
+      </div>
+      <div class="col-md-0"></div>
+      <div class="col-md-3 race-sidebar">
+        <h2>Rating Test</h2>
+        <div class="stars">
+          <form action="">
+            <input class="star star-5" id="star-5" type="radio" name="star" />
+            <label class="star star-5" for="star-5"></label>
+            <input class="star star-4" id="star-4" type="radio" name="star" />
+            <label class="star star-4" for="star-4"></label>
+            <input class="star star-3" id="star-3" type="radio" name="star" />
+            <label class="star star-3" for="star-3"></label>
+            <input class="star star-2" id="star-2" type="radio" name="star" />
+            <label class="star star-2" for="star-2"></label>
+            <input class="star star-1" id="star-1" type="radio" name="star" />
+            <label class="star star-1" for="star-1"></label>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-8 review-holder">
+        This is for reviews
+                {{#each Race}}
+        <li>
+          {{this.race_name}}
+        </li>
+        {{#each this.Reviews}}
+        <li>
+          {{this.highlight}}
+        </li>
+        {{/each}}
+         {{/each}}
+      </div>
+      <div class="col-lg-4">
+      </div>
+    </div>
+    <!-- Review Modal -->
+    <div class="modal text-center">
+      <div class="modal-content">
+        <h1>Leave your review!</h1>
+        <h2>Please rate each category from 1 (Poor) to 5 (Excellent).</h2>
+        <form method="POST" action="/api/reviews">
+          <p>Name:</p>
+          <div class="form-group">
+            <input type="name" class="form-control" id="name" aria-describedby="name" placeholder="Ex: Frank Furter">
+          </div>
+          <p>1. Race Atmosphere:</p>
+          <div class="form-group">
+            <select class="form-control" id="atmosphere">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <p>2. Swag:</p>
+          <div class="form-group">
+            <select class="form-control" id="swag">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <p>3. Aid Stations:</p>
+          <div class="form-group">
+            <select class="form-control" id="aid_stations">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <p>4. Water Clarity:</p>
+          <div class="form-group">
+            <select class="form-control" id="clarity">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <p>5. Sighting:</p>
+          <div class="form-group">
+            <select class="form-control" id="sighting">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <p>6. Transition Layout and Signs:</p>
+          <div class="form-group">
+            <select class="form-control" id="transition">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <p>7. Road Condition:</p>
+          <div class="form-group">
+            <select class="form-control" id="road_surface">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <p>8. Hill Difficulty (Run) -- 1 (Easy) to 5 (Hard)</p>
+          <div class="form-group">
+            <select class="form-control" id="run_hills">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <p>9. Hill Difficulty (Bike) -- 1 (Easy) to 5 (Hard):</p>
+          <div class="form-group">
+            <select class="form-control" id="bike_hills">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <p>10. Run Shade -- 1 (Little) to 5 (Lots):</p>
+          <div class="form-group">
+            <select class="form-control" id="run_shade">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <p>Overall Rating:</p>
+          <div class="form-group">
+            <select class="form-control" id="overall_rating">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <p>Would you recommend this race to a friend?</p>
+          <div class="form-group">
+            <select class="form-control" id="race_again">
+              <option>Hell yeah!</option>
+              <option>No way!</option>
+            </select>
+          </div>
+          <p>Race Highlight:</p>
+          <div class="form-group highlight">
+            <textarea class="form-control" id="highlight" rows="2"></textarea>
+          </div>
+          <p>General Comments/Review:</p>
+          <div class="form-group comments">
+            <textarea class="form-control" id="comments" rows="6"></textarea>
+          </div>
+        </form>
+        <span><button type="button" class="btn btn-warning submit-review">Submit Review!</button></span>
+        <span><button type="button" class="btn btn-secondary review-race cancel">Cancel</button></span>
+      </div>
+    </div>
+    <!-- Footer -->
+    <div class="footer navbar-fixed-bottom">
+      <a href="/api/races">/api/races</a>
+    </div>
+  </div>
+  <!-- Race-details JS -->
+  <script type="text/javascript" src='js/race.js'></script>

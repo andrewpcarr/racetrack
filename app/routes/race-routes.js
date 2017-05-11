@@ -32,20 +32,6 @@ module.exports = function (app) {
     //console.log(dbRace); 
   });  
 
-   app.get("/api/race/results", function(req, res) {
-    console.log("bueller?  bueller?" + req.body.name);
-    db.Race.findAll({
-      where: {
-      race_name: req.body.name,
-     race_month: req.body.month,
-     city: req.body.city,
-      distance: req.body.distance, 
-     swim_start: req.body.start
-      } 
-    })
-    .then(function(dbRace) {
-      res.json(dbRace);
-    });
-  });
+
 
 };
