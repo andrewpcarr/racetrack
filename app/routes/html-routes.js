@@ -76,6 +76,7 @@ module.exports = function(app) {
     });
   });
 
+
 app.post("/race/:id", function(req, res) {
   console.log(req.body);
   db.Reviews.create({
@@ -98,5 +99,4 @@ app.post("/race/:id", function(req, res) {
     res.redirect('/race/:id');
   });
 });
-
 };
