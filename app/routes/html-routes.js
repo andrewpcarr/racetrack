@@ -32,39 +32,34 @@ module.exports = function(app) {
       m: req.body.month,
       //swim_start
       sw: req.body.swim_start
-    }), function(req,res) {
+    }),
+    function(req, res) {
       db.Races.findAll({
         where: {
-        $or: [
-          {
+          $or: [{
             racename: {
-              $eq:req.body.race_name
+              $eq: req.body.race_name
             }
-          },
-          {
-           city: {
-             $eq: req.body.city
+          }, {
+            city: {
+              $eq: req.body.city
             }
-         },
-         {
-          distance: {
-            $eq: req.body.distance
-          }
-        },
-        {
-          month: {
-            $eq: req.body.month
-          }
-        },
-        {
-          swim_start:{
-            $eq: req.body.swim_start
-          }
+          }, {
+            distance: {
+              $eq: req.body.distance
+            }
+          }, {
+            month: {
+              $eq: req.body.month
+            }
+          }, {
+            swim_start: {
+              $eq: req.body.swim_start
+            }
+          }]
         }
-      ]
-        }
-    }).then(function(data) {
-        res.render('results', {race:data});
+      }).then(function(data) {
+        res.render('results', { race: data });
       });
     });
 
@@ -74,8 +69,31 @@ module.exports = function(app) {
       where: {
         id: req.params.id
       }
-    }).then(function(data){
-      res.render('race-details', {race: data});
+    }).then(function(data) {
+      res.render('race-details', { race: data });
+    });
+  });
+
+  app.post("/race/:id", function(req, res) {
+    console.log(req.body);
+    db.Reviews.create({
+      atmosphere: req.body.atmosphere,
+      swag: req.body.swag,
+      aid_stations: req.body.aid_stations,
+      clarity: req.body.clarity,
+      sighting: req.body.sighting,
+      transition: req.body.transition,
+      bike_hills: req.body.bike_hills,
+      road_surface: req.body.road_surface,
+      run_hills: req.body.run_hills,
+      run_shade: req.body.run_shade,
+      overall_rating: req.body.overall_rating,
+      race_again: req.body.race_again,
+      highlight: req.body.highlight,
+      comments: req.body.comments,
+      RaceId: req.params.id,
+    }).then(function() {
+      res.redirect('/race/:id');
     });
   });
 };
