@@ -7,7 +7,7 @@ var db = require("../models");
 module.exports = function (app) {
 
     app.get("/api/review", function (req, res) {
-        // 1. Add a join to include all 
+        
         db.Review.findAll({
             include: [db.Race]
         }).then(function (dbReview) {

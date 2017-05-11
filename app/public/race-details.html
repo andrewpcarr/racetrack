@@ -20,8 +20,6 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <!-- Race Details CSS -->
   <link rel="stylesheet" type="text/css" href="css/race-details.css">
-  <!-- Race-details JS -->
-  <script type="text/javascript" src='js/race.js'></script>
 </head>
 
 <body>
@@ -58,7 +56,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-7 race-details">
+      <div class="col-md-8 race-details">
         <img src="logo-test.jpg">
         <h1>Race Name</h1>
         <p id="overall-rating">Overall Rating:</p>
@@ -68,7 +66,7 @@
         <button type="button" class="btn btn-warning review-race">Review this race!</button>
       </div>
       <div class="col-md-0"></div>
-      <div class="col-md-4 race-sidebar">
+      <div class="col-md-3 race-sidebar">
         <h2>Rating Test</h2>
         <div class="stars">
           <form action="">
@@ -86,23 +84,150 @@
         </div>
       </div>
     </div>
+    <div class="row">
+      <div class="col-lg-8 review-holder">
+        This is for reviews
+      </div>
+      <div class="col-lg-4">
+      </div>
+    </div>
     <!-- Review Modal -->
     <div class="modal text-center">
       <div class="modal-content">
         <h1>Leave your review!</h1>
-        <p>1. Race Atmosphere:</p>
-        <p>2. Swag:</p>
-        <p>3. Aid Stations:</p>
-        <p>4. Water Clarity:</p>
-        <p>5. Sighting:</p>
-        <p>6. Transition Layout and Signs:</p>
-        <p>7. Road Condition:</p>
-        <p>8. Hill Difficulty (Run):</p>
-        <p>9. Hill Difficulty (Bike):</p>
-        <p>10. Run Shade:</p>
-        <p>Overall Rating:</p>
-        <p>Would you recommend this race to a friend?</p>
-        <span><button type="button" class="btn btn-warning review-race">Submit Review!</button></span>
+        <h2>Please rate each category from 1 (Poor) to 5 (Excellent).</h2>
+        <form method="POST" action="/api/reviews">
+          <p>Name:</p>
+          <div class="form-group">
+            <input type="name" class="form-control" id="name" aria-describedby="name" placeholder="Ex: Frank Furter">
+          </div>
+          <p>1. Race Atmosphere:</p>
+          <div class="form-group">
+            <select class="form-control" id="atmosphere">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <p>2. Swag:</p>
+          <div class="form-group">
+            <select class="form-control" id="swag">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <p>3. Aid Stations:</p>
+          <div class="form-group">
+            <select class="form-control" id="aid_stations">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <p>4. Water Clarity:</p>
+          <div class="form-group">
+            <select class="form-control" id="clarity">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <p>5. Sighting:</p>
+          <div class="form-group">
+            <select class="form-control" id="sighting">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <p>6. Transition Layout and Signs:</p>
+          <div class="form-group">
+            <select class="form-control" id="transition">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <p>7. Road Condition:</p>
+          <div class="form-group">
+            <select class="form-control" id="road_surface">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <p>8. Hill Difficulty (Run) -- 1 (Easy) to 5 (Hard)</p>
+          <div class="form-group">
+            <select class="form-control" id="run_hills">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <p>9. Hill Difficulty (Bike) -- 1 (Easy) to 5 (Hard):</p>
+          <div class="form-group">
+            <select class="form-control" id="bike_hills">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <p>10. Run Shade -- 1 (Little) to 5 (Lots):</p>
+          <div class="form-group">
+            <select class="form-control" id="run_shade">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <p>Overall Rating:</p>
+          <div class="form-group">
+            <select class="form-control" id="overall_rating">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <p>Would you recommend this race to a friend?</p>
+          <div class="form-group">
+            <select class="form-control" id="race_again">
+              <option>Hell yeah!</option>
+              <option>No way!</option>
+            </select>
+          </div>
+          <p>Race Highlight:</p>
+          <div class="form-group highlight">
+            <textarea class="form-control" id="highlight" rows="2"></textarea>
+          </div>
+          <p>General Comments/Review:</p>
+          <div class="form-group comments">
+            <textarea class="form-control" id="comments" rows="6"></textarea>
+          </div>
+        </form>
+        <span><button type="button" class="btn btn-warning submit-review">Submit Review!</button></span>
         <span><button type="button" class="btn btn-secondary review-race cancel">Cancel</button></span>
       </div>
     </div>
@@ -111,6 +236,8 @@
       <a href="/api/races">/api/races</a>
     </div>
   </div>
+  <!-- Race-details JS -->
+  <script type="text/javascript" src='js/race.js'></script>
 </body>
 
 </html>

@@ -16,6 +16,13 @@ body {
   margin-right: 30px;
 }
 
+.review-holder {
+  background-color: white;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  padding: 20px;
+}
+
 
 /* CSS for the star rating */
 
@@ -65,7 +72,6 @@ label.star:before {
 
 .modal {
   display: none;
-  position: fixed;
   z-index: 15;
   left: 0;
   top: 0;
@@ -83,12 +89,8 @@ label.star:before {
   border: 1px solid #888;
   width: 60%;
   letter-spacing: 1.5px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .race-details p {
@@ -114,6 +116,7 @@ label.star:before {
 }
 
 .btn.btn-warning.review-race,
+.btn.btn-warning.submit-review,
 .btn.btn-secondary.review-race {
   font-size: 20px;
   margin-top: 10px;
@@ -124,6 +127,11 @@ label.star:before {
   font-size: 20px;
 }
 
+.form-control {
+  width: 100px;
+  margin: 0 auto;
+}
+
 .modal h1 {
   margin: 0px 0px 20px 0px;
   font-size: 50px;
@@ -131,4 +139,13 @@ label.star:before {
 
 .review-confirmation {
   color: green;
+}
+
+#name {
+  width: 300px;
+}
+
+#highlight,
+#comments {
+  width: 700px;
 }
