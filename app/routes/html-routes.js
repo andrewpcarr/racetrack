@@ -20,8 +20,14 @@ module.exports = function (app) {
   });
 
   // Shows users the results of their race search
-    app.get("/search", function (req, res) {
-      console.log(req.body);
+
+  app.post("/search", function (req, res) {
+    if (req.body.race_name === '' && req.body.race_name === '' && req.body.city === '' && req.body.distance === '' && req.body.race_month === '' && req.body.swim_start === '') {
+      // show em all!
+      db.Race.findAll({}).then(function (data) {
+        res.render('results', { Race: data });
+      });
+    } else {
       db.Race.findAll({
         where: {
           $or: [
@@ -39,25 +45,21 @@ module.exports = function (app) {
               distance: {
                 $eq: req.body.distance
               }
-            },
-            {
+            }, {
               race_month: {
                 $eq: req.body.race_month
               }
-            },
-            {
+            }, {
               swim_start: {
                 $eq: req.body.swim_start
               }
-            }
-          ]
+            }]
         }
       }).then(function (data) {
-        console.log('Render Race');
         res.render('results', { Race: data });
       });
-    }); 
-
+    }
+  });
 
   app.get("/race/:id", function (req, res) {
     db.Race.findAll({
@@ -68,7 +70,6 @@ module.exports = function (app) {
     }).then(function (data) {
       var overall = data[0].Reviews;
       // console.log("these are the Reviews: " + JSON.stringify(data[0].Reviews[0]));
-
       var overallRtg = getAverage(overall);
       console.log("Do we have an Average? " + overallRtg);
       var raceObj = {
@@ -80,7 +81,7 @@ module.exports = function (app) {
     });
   });
 
-//function to get average of overall ratings + to get the percentage of users who would do race again
+  //function to get average of overall ratings + to get the percentage of users who would do race again
   function getAverage(ratings) {
     console.log("Are these ratings coming through???? " + JSON.stringify(ratings));
     var ratingsArr = [];
@@ -100,7 +101,7 @@ module.exports = function (app) {
       }
     };
     var recAvg = recommend / count;
-    var norecAvg = dontdoit/count; 
+    var norecAvg = dontdoit / count;
 
     var avgRating = sum / count;
     var ratingsObj = {
@@ -114,4 +115,26 @@ module.exports = function (app) {
     return ratingsArr;
   }
 
-}; 
+  app.post("/race/:id", function (req, res) {
+    console.log(req.body);
+    db.Reviews.create({
+      atmosphere: req.body.atmosphere,
+      swag: req.body.swag,
+      aid_stations: req.body.aid_stations,
+      clarity: req.body.clarity,
+      sighting: req.body.sighting,
+      transition: req.body.transition,
+      bike_hills: req.body.bike_hills,
+      road_surface: req.body.road_surface,
+      run_hills: req.body.run_hills,
+      run_shade: req.body.run_shade,
+      overall_rating: req.body.overall_rating,
+      race_again: req.body.race_again,
+      highlight: req.body.highlight,
+      comments: req.body.comments,
+      RaceId: req.params.id,
+    }).then(function () {
+      res.redirect('/race/:id');
+    });
+  });
+};
