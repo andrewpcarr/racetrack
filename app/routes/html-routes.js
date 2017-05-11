@@ -68,9 +68,7 @@ module.exports = function(app) {
     });
   });
 
-};
-
-app.post("/race/:id", function(req, res) {
+  app.post("/race/:id", function(req, res) {
   console.log(req.body);
   db.Reviews.create({
     atmosphere: req.body.atmosphere,
@@ -89,8 +87,7 @@ app.post("/race/:id", function(req, res) {
     comments: req.body.comments,
     RaceId: req.params.id,
   }).then(function() {
-    res.redirect('/race/:id'); >>> >>> > andrew
+    res.redirect('/race/:id');
   });
 });
-
 };
