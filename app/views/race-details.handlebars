@@ -80,7 +80,7 @@
           <span class="label label-primary review-lbl">Road Surface <span class="badge"> {{this.road_surface}}</span></span>
           <span class="label label-primary review-lbl">Run Hills (5=most challenging) <span class="badge"> {{this.run_hills}}</span></span>
           <span class="label label-primary review-lbl">Shade on Run Course <span class="badge"> {{this.run_shade}}</span></span>
-             <span class="label label-primary review-lbl">Overall Race<span class="badge"> {{this.overall}}</span></span>
+          <span class="label label-primary review-lbl">Overall Race<span class="badge"> {{this.overall}}</span></span>
           <p> <span class="label label-warning review-lbl">Race Highight  </span> {{this.highlight}}</p>
           <p> <span class="label label-default review-lbl">Comments  </span> {{this.comments}}</p>
 
@@ -97,14 +97,14 @@
     <div class="modal-content">
       <h1>Leave your review!</h1>
       <h2>Please rate each category from 1 (Poor) to 5 (Excellent).</h2>
-      <form method="POST" action="/api/reviews">
+      <form method="POST" action="/race/:id">
         <p>Name:</p>
         <div class="form-group">
           <input type="name" class="form-control" id="name" aria-describedby="name" placeholder="Ex: Frank Furter">
         </div>
         <p>1. Race Atmosphere:</p>
         <div class="form-group">
-          <select class="form-control" id="atmosphere">
+          <select class="form-control" name="atmosphere">
               <option>1</option>
               <option>2</option>
               <option>3</option>
@@ -114,7 +114,7 @@
         </div>
         <p>2. Swag:</p>
         <div class="form-group">
-          <select class="form-control" id="swag">
+          <select class="form-control" name="swag">
               <option>1</option>
               <option>2</option>
               <option>3</option>
@@ -124,7 +124,7 @@
         </div>
         <p>3. Aid Stations:</p>
         <div class="form-group">
-          <select class="form-control" id="aid_stations">
+          <select class="form-control" name="aid_stations">
               <option>1</option>
               <option>2</option>
               <option>3</option>
@@ -134,7 +134,7 @@
         </div>
         <p>4. Water Clarity:</p>
         <div class="form-group">
-          <select class="form-control" id="clarity">
+          <select class="form-control" name="clarity">
               <option>1</option>
               <option>2</option>
               <option>3</option>
@@ -144,7 +144,7 @@
         </div>
         <p>5. Sighting:</p>
         <div class="form-group">
-          <select class="form-control" id="sighting">
+          <select class="form-control" name="sighting">
               <option>1</option>
               <option>2</option>
               <option>3</option>
@@ -154,7 +154,7 @@
         </div>
         <p>6. Transition Layout and Signs:</p>
         <div class="form-group">
-          <select class="form-control" id="transition">
+          <select class="form-control" name="transition">
               <option>1</option>
               <option>2</option>
               <option>3</option>
@@ -164,7 +164,7 @@
         </div>
         <p>7. Road Condition:</p>
         <div class="form-group">
-          <select class="form-control" id="road_surface">
+          <select class="form-control" name="road_surface">
               <option>1</option>
               <option>2</option>
               <option>3</option>
@@ -174,7 +174,7 @@
         </div>
         <p>8. Hill Difficulty (Run) -- 1 (Easy) to 5 (Hard)</p>
         <div class="form-group">
-          <select class="form-control" id="run_hills">
+          <select class="form-control" name="run_hills">
               <option>1</option>
               <option>2</option>
               <option>3</option>
@@ -184,7 +184,7 @@
         </div>
         <p>9. Hill Difficulty (Bike) -- 1 (Easy) to 5 (Hard):</p>
         <div class="form-group">
-          <select class="form-control" id="bike_hills">
+          <select class="form-control" name="bike_hills">
               <option>1</option>
               <option>2</option>
               <option>3</option>
@@ -194,7 +194,7 @@
         </div>
         <p>10. Run Shade -- 1 (Little) to 5 (Lots):</p>
         <div class="form-group">
-          <select class="form-control" id="run_shade">
+          <select class="form-control" name="run_shade">
               <option>1</option>
               <option>2</option>
               <option>3</option>
@@ -204,7 +204,7 @@
         </div>
         <p>Overall Rating:</p>
         <div class="form-group">
-          <select class="form-control" id="overall_rating">
+          <select class="form-control" name="overall_rating">
               <option>1</option>
               <option>2</option>
               <option>3</option>
@@ -214,22 +214,23 @@
         </div>
         <p>Would you recommend this race to a friend?</p>
         <div class="form-group">
-          <select class="form-control" id="race_again">
-              <option>Hell yeah!</option>
-              <option>No way!</option>
+          <select class="form-control" name="race_again">
+              <option>Absolutely!</option>
+              <option>Not a chance! SAD!</option>
             </select>
         </div>
         <p>Race Highlight:</p>
         <div class="form-group highlight">
-          <textarea class="form-control" id="highlight" rows="2"></textarea>
+          <textarea class="form-control" name="highlight" rows="2"></textarea>
         </div>
         <p>General Comments/Review:</p>
         <div class="form-group comments">
-          <textarea class="form-control" id="comments" rows="6"></textarea>
+          <textarea class="form-control" name="comments" rows="6"></textarea>
         </div>
+        <span><button type="submit" class="btn btn-warning submit-review">Submit Review!</button></span>
+        <span><button type="button" class="btn btn-secondary review-race cancel">Cancel</button></span>
       </form>
-      <span><button type="button" class="btn btn-warning submit-review">Submit Review!</button></span>
-      <span><button type="button" class="btn btn-secondary review-race cancel">Cancel</button></span>
+
     </div>
   </div>
   <!-- Footer -->

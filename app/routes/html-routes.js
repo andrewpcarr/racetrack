@@ -117,7 +117,15 @@ module.exports = function (app) {
 
   app.post("/race/:id", function (req, res) {
     console.log(req.body);
-    db.Reviews.create({
+    var raceAgain = req.body.race_again;
+    var boolean;
+    if (raceAgain === 'Absolutely!') {
+      boolean = 1;
+    } else {
+      boolen = 0;
+    }
+
+    db.Review.create({
       atmosphere: req.body.atmosphere,
       swag: req.body.swag,
       aid_stations: req.body.aid_stations,
@@ -129,7 +137,7 @@ module.exports = function (app) {
       run_hills: req.body.run_hills,
       run_shade: req.body.run_shade,
       overall_rating: req.body.overall_rating,
-      race_again: req.body.race_again,
+      race_again: boolean,
       highlight: req.body.highlight,
       comments: req.body.comments,
       RaceId: req.params.id,

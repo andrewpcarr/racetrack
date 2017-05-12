@@ -16,6 +16,7 @@ $(function() {
 
   $('.btn.btn-warning.submit-review').on('click', function() {
     createNewReview();
+    $('.modal').fadeOut(500);
   });
 
   let name;
