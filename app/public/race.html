@@ -19,43 +19,35 @@
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
    <!-- BASE STYLES -->
    <!-- Race Details CSS -->
-   <link rel="stylesheet" type="text/css" href="/css/style.css">
+   <link rel="stylesheet" type="text/css" href="/css/styles.css">
    <!-- Custom Theme -->
    <link rel="stylesheet" type="text/css" href="css/race_style.css">
  </head>
  <body>
+   <div class="main-screen">
  <!-- Header give a title with a little styling -->
-   <div class="navbar-fixed-top landing-header">
-      <h2 id="header-text"> RACETRACK The Search Portal For Triathlons</h2>
+   <div class="logo-box">
+       <h1>RaceTrack</h1>
+      <h2>The Search Portal For Triathlons</h2>
     </div>
-   <br>
-   <br>
-   <div class="container">
+   <div class=" main-form">
+     <h3>Find your Race</h3>
      <form class="search-form" action="/search" method="POST">
-       <div class="form-group input-group">
-         <input type="text" id="race_name" name="race_name" class="form-control" placeholder="Search Race Name" autofocus>
-         <span class="input-group-btn">
-           <button class="btn btn-primary" type="submit">Go!</button>
-         </span>
+       <div class="form-group">
+         <input type="text" id="race_name" name="race_name" class="form-control" placeholder="Search Race Name">
        </div>
-       <div class="form-group input-group">
-         <input type="text" id="city" name="city" class="form-control" placeholder="Search a city" autofocus>
-         <span class="input-group-btn">
-           <button class="btn btn-primary" type="submit">Go!</button>
-         </span>
+       <div class="form-group">
+         <input type="text" id="city" name="city" class="form-control" placeholder="Search a city">
        </div>
-       <div class="form-group input-group">
-         <input type="text" id="distance" name="distance" class="form-control" placeholder="Search by race length!" autofocus>
-           <span class="input-group-btn">
-             <button class="btn btn-primary" type="submit">Go!</button>
-           </span>
+       <div class="form-group">
+         <input type="text" id="distance" name="distance" class="form-control" placeholder="Search by race length!">
        </div>
-       <div class="form-group input-group">
+       <div class="form-group">
          <!-- <input type="text" id="race_month" name="race_month" class="form-control" placeholder="Search by Month" autofocus>
          <span class="input-group-btn">
            <button class="btn btn-primary" type="submit">Go!</button>
          </span> -->
-         <select type="text" id="race_month" name="race_month" class="form-control" autofocus>
+         <select type="text" id="race_month" name="race_month" class="form-control">
            <option>Choose a Month</option>
            <option>January</option>
            <option>February</option>
@@ -70,12 +62,12 @@
            <option>December</option>
          </select>
        </div>
-       <div class="form-group input-group">
+       <div class="form-group">
          <!-- <input type="text" id="swim_start" name="swim_start" class="form-control" placeholder="Start with a Swim?" autofocus>
          <span class="input-group-btn">
            <button class="btn btn-primary" type="submit">Go!</button>
          </span> -->
-         <select type="text" id="swim_start" name="swim_start" class="form-control" required autofocus>
+         <select type="text" id="swim_start" name="swim_start" class="form-control">
            <option>Swim Start</option>
            <option>Time Trial</option>
            <option>Waves: From Shore</option>
@@ -83,10 +75,19 @@
            <option>Mass Start</option>
          </select>
        </div>
+      <div class="text-center">
+       <button class="btn btn-primary" type="submit">Find a Race!</button>
+     </div>
      </form>
      <!-- <div class="footer navbar-fixed-bottom">
        <a href="/api/races">/api/races</a>
      </div> -->
    </div>
+ </div>
+ <script>
+ $(window).on('load', function(){
+   $('.main-screen').addClass('loaded');
+ });
+ </script>
  </body>
 </html>

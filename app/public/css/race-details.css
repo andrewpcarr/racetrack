@@ -1,22 +1,63 @@
-.race-details,
-.race-sidebar {
-  /*border: 1px solid grey;*/
-  margin-top: 20px;
-  background-color: rgba(250, 250, 250, 1.0);
-  padding: 20px 20px 20px 20px;
+/*NAVBAR*/
+.navbar {
+  background:#f1f1f1;
+  border-radius: 0;
+  margin:0;
 }
 
+.navbar-default .navbar-brand {
+  color:#113d63;
+  position:relative;
+  padding: 0;
+  font-size: 24px;
+  line-height: 50px;
+  padding-left: 65px;
+  font-family:'Oswald', sans-serif;
+}
+
+.navbar-default .navbar-brand:hover {
+  color:#397500;
+}
+
+.navbar-default .navbar-brand:before {
+  content:"";
+  background:url(../images/logo.png) no-repeat;
+  display:inline-block;
+  width: 46px;
+  height: 40px;
+  background-size:contain;
+  position: absolute;
+  left: 15px;
+  top: 4px;
+}
+
+.race-item {
+  padding:40px 15px;
+}
+
+.race-search{
+  margin-bottom:20px;
+}
+
+.race-search .input-group[class*=col-] {
+  float: none;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+@media screen and (min-width:768px) {
+  .race-search .input-group[class*=col-] {
+    float: left;
+  }
+}
+
+/*race-details will be a global class for our boxes*/
 .race-details {
-  margin-right: 30px;
+  margin-bottom: 20px;
+  background:#fff;
+  padding: 20px 15px;
+  box-shadow:0px 0px 4px 0px rgba(0,0,0,.3);
 }
-
-.review-holder {
-  background-color: white;
-  margin-top: 20px;
-  margin-bottom: 50px;
-  padding: 20px;
-}
-
 
 /* CSS for the star rating */
 
@@ -61,6 +102,41 @@ label.star:before {
   font-family: FontAwesome;
 }
 
+/* CSS for the Reviews display */
+.review-lbl {
+  padding:8px;
+  font-size: 14px;
+  display: inline-block;
+  margin: 5px;
+  line-height: 20px;
+  font-weight:400;
+}
+
+.review-lbl .badge {
+  margin-left:8px;
+}
+.highlight-box {
+  margin:20px 0;
+  padding:10px 0;
+  border-top:1px solid #f1f1f1;
+  border-bottom:1px solid #f1f1f1;
+}
+
+.highlight-box .review-lbl,
+.full-review .review-lbl {
+  margin-bottom:10px;
+}
+
+.highlight-box p {
+  font-size:20px;
+  font-family:'Oswald', sans-serif;
+  padding-left:5%;
+}
+
+.full-review p {
+  padding-left:5%;
+}
+
 
 /* Modal CSS */
 
@@ -85,35 +161,6 @@ label.star:before {
   letter-spacing: 1.5px;
   margin-top: 50px;
   margin-bottom: 50px;
-}
-
-.race-details p {
-  font-size: 18px;
-  clear: both;
-}
-
-.race-details img {
-  height: 150px;
-  width: 150px;
-  margin: 0px 20px 20px 0px;
-  float: left;
-}
-
-.race-details h1 {
-  float: left;
-  font-size: 50px;
-  margin-top: 0px;
-}
-
-#overall-rating {
-  float: left;
-}
-
-.btn.btn-warning.review-race,
-.btn.btn-warning.submit-review,
-.btn.btn-secondary.review-race {
-  font-size: 20px;
-  margin-top: 10px;
 }
 
 .modal-content p {
@@ -144,13 +191,6 @@ label.star:before {
   width: 700px;
 }
 
-/* CSS for the Reviews display */
-.review-lbl {
-  font-size: 16px;
-  display: inline-block;
-  margin: 5px;
-}
-
 /*Results*/
 
 /**STRIPPED UL CLASS**/
@@ -170,7 +210,7 @@ label.star:before {
   margin-bottom:20px;
 }
 
-.results .race-details img {
+.race-details img {
   width:100%;
   height:auto;
   float:none;

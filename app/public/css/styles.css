@@ -1,6 +1,6 @@
 body {
-  background-color: rgba(200, 200, 200, 1.0);
-  font-family: 'Oswald', sans-serif;
+  background-color: #e3e3e3;
+  font-family: 'open sans', sans-serif;
   height: auto;
   font-size:12px;
 }
@@ -8,15 +8,19 @@ body {
 /**JN RESPONSIVE TYPOGRAPHY**/
 
 a {
+  color:#113D63;
   transition:color .3s ease-in-out;
 }
 
 a:hover {
+  color:#397500;
   text-decoration:none;
 }
 
 h1,h2,h3,h4 {
   margin:0 0 15px;
+  color:#113D63;
+  font-family:'Oswald', sans-serif;
 }
 
 h1 {
@@ -33,6 +37,56 @@ h3 {
 
 h4 {
   font-size:13px;
+}
+
+.btn {
+  transition:all .3s ease-in-out;
+  font-family:'Oswald', sans-serif;
+}
+
+.btn-primary {
+  background-image:none;
+  background:#397500;
+  border-color:#499500;
+}
+
+.btn-primary:hover {
+  background:#113D63;
+  border-color:#549DDD;
+}
+
+.btn-warning {
+  background-image:none;
+  background:#499500;
+  border-color:#397500;
+}
+
+.btn-warning:hover {
+  background:#D7AC23;
+  border-color:#113D63;
+}
+
+.label-primary {
+  background:#113D63;
+}
+
+.label-warning {
+  background:#D7AC23;
+}
+
+.label-default {
+  background:#397500;
+}
+
+.badge {
+  background:#fff;
+  color:#113D63;
+}
+
+.footer {
+  border-top:1px solid #f1f1f1;
+  padding-top:30px;
+  padding-bottom:30px;
 }
 
 @media screen and (min-width:768px) {
