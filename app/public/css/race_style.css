@@ -1,17 +1,74 @@
 /*Get in the background image */
 body {
     background-image: url("../images/triathlon_water.jpeg");
+    background-repeat: no-repeat;
 }
 
 /**LANDING PAGE**/
 /* Custom CSS for header on landing page */
-.landing-header{
-    background: linear-gradient(to bottom, rgba(175, 255, 255, 222), rgba(0, 0, 0, 0));
-    opacity: .84;
+.main-screen {
+  position:absolute;
+  width:100%;
+  top:30px;
+  opacity:0;
+  transition:all .4s ease-in-out;
 }
-/* Header Text Customization */
-#header-text{
-    opacity: 1;
-    color: black;
-    ;
+
+.main-screen.loaded {
+  top:0;
+  opacity:1;
+}
+
+.logo-box {
+  text-align:left;
+  width:275px;
+  margin:0 auto;
+  color:#fff;
+  padding:40px 0;
+  position:relative;
+}
+
+.logo-box:before {
+  content:'';
+  position:absolute;
+  left: 0;
+  top:40px;
+  display:block;
+  width:80px;
+  height:70px;
+  background:url(../images/logo.png) no-repeat left center;
+  background-size:contain;
+}
+
+.logo-box h1{
+  font-size: 52px;
+  line-height:40px;
+  top:0px;
+  position:relative;
+  margin:0;
+  padding-left:75px;
+  text-shadow:1px 1px 1px #333;
+  color:#fff;
+}
+
+.logo-box h2 {
+  margin:0;
+  position: relative;
+  font-size:16px;
+  line-height:18px;
+  top:12px;
+  padding-left:85px;
+  text-shadow:1px 1px 1px #333;
+  color:#fff;
+}
+
+
+
+.main-form {
+  margin: 0 auto;
+  width:90%;
+  max-width:450px;
+  padding:30px;
+  box-shadow:0px 0px 10px 0px rgba(0,0,0,.6);
+  background:#fff;
 }
