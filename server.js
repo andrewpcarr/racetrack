@@ -6,6 +6,8 @@
 // =============================================================
 var express = require("express");
 var bodyParser = require("body-parser");
+var favicon = require("serve-favicon");
+var path = require("path");
 
 // Sets up the Express App
 // =============================================================
@@ -23,6 +25,9 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 // Static directory
 app.use(express.static("./app/public"));
+
+//favicon
+app.use(favicon(path.join(__dirname, 'app/public', 'favicon.ico')));
 
 // Set Handlebars.
 var exphbs = require("express-handlebars");

@@ -105,8 +105,9 @@ label.star:before {
 /* CSS for the Reviews display */
 .review-lbl {
   padding:8px;
-  font-size: 14px;
-  display: inline-block;
+  white-space:normal;
+  font-size: 10px;
+  display: block;
   margin: 5px;
   line-height: 20px;
   font-weight:400;
@@ -124,7 +125,7 @@ label.star:before {
 
 .highlight-box .review-lbl,
 .full-review .review-lbl {
-  margin-bottom:10px;
+  margin-bottom:30px;
 }
 
 .highlight-box p {
@@ -137,59 +138,30 @@ label.star:before {
   padding-left:5%;
 }
 
+@media screen and (min-width:480px) {
+  .review-lbl {
+    display:inline-block;
+    font-size:14px;
+    white-space: nowrap;
+  }
+}
 
+/* Modal CSS */
 /* Modal CSS */
 
 .modal {
   display: none;
-  z-index: 15;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(120, 120, 120, 0.7);
-  text-align: center;
 }
 
 .modal-content {
   background-color: #fefefe;
-  margin: auto;
   padding: 30px 20px 30px 20px;
-  border: 1px solid #888;
-  width: 60%;
-  letter-spacing: 1.5px;
-  margin-top: 50px;
-  margin-bottom: 50px;
 }
 
-.modal-content p {
-  text-align: center;
-  font-size: 20px;
+#reviewModal .form-control {
+  margin-bottom:20px;
 }
 
-.form-control {
-  width: 100px;
-  margin: 0 auto;
-}
-
-.modal h1 {
-  margin: 0px 0px 20px 0px;
-  font-size: 50px;
-}
-
-.review-confirmation {
-  color: green;
-}
-
-#name {
-  width: 300px;
-}
-
-#highlight,
-#comments {
-  width: 700px;
-}
 
 /*Results*/
 

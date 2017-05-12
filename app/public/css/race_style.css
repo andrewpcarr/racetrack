@@ -41,12 +41,12 @@ body {
 }
 
 .logo-box h1{
-  font-size: 52px;
+  font-size: 53px;
   line-height:40px;
   top:0px;
   position:relative;
   margin:0;
-  padding-left:75px;
+  padding-left:70px;
   text-shadow:1px 1px 1px #333;
   color:#fff;
 }
@@ -69,6 +69,6 @@ body {
   width:90%;
   max-width:450px;
   padding:30px;
-  box-shadow:0px 0px 10px 0px rgba(0,0,0,.6);
+  box-shadow:0px 0px 5px 0px rgba(0,0,0,.3);
   background:#fff;
 }
