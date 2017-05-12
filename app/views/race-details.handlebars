@@ -9,7 +9,7 @@
 <!-- Main body -->
 <div class="race-item container">
 {{#each Race}}
-  <div class="race-details" data-city="{{this.city}}" data-month="{{this.month}}">
+  <div class="race-details" data-city="{{this.city}}" data-month="{{this.race_month}}" data-state="{{this.state}}">
     <div class="row">
       <div class="race-img col-xs-4 col-sm-3">
         <img src="{{this.logo}}">
@@ -31,7 +31,7 @@
       {{#each Total}}
         <div class="race-review col-sm-6">
           <div class="stars" data-stars="{{this.totalScore}}">
-          <h3>Overal Rating: {{this.totalScore}}</h3>
+          <h3>Overall Rating: {{this.totalScore}}</h3>
         </div>
             <!--NICE TO HAVE
               (x Reviews)
@@ -79,7 +79,7 @@
 
              <span class="label label-primary review-lbl">Overall Race<span class="badge"> {{this.overall}}</span></span>
              <div class="highlight-box">
-               <span class="label label-warning review-lbl">Race Highight  </span><p> {{this.highlight}}</p>
+               <span class="label label-warning review-lbl">Race Highlight  </span><p> {{this.highlight}}</p>
              </div>
              <div class="full-review">
           <span class="label label-default review-lbl">Comments  </span> <p>{{this.comments}}</p>
@@ -264,3 +264,4 @@
 
 <!-- Race-details JS -->
 <script type="text/javascript" src='/js/race.js'></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
