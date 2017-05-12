@@ -116,13 +116,13 @@ module.exports = function (app) {
   }
 
   app.post("/race/:id", function (req, res) {
-    console.log(req.body);
-    var raceAgain = req.body.race_again;
-    var boolean;
+    console.log(req.params.id);
+    let raceAgain = req.body.race_again;
+    let boolean;
     if (raceAgain === 'Absolutely!') {
       boolean = 1;
     } else {
-      boolen = 0;
+      boolean = 0;
     }
 
     db.Review.create({
@@ -140,9 +140,9 @@ module.exports = function (app) {
       race_again: boolean,
       highlight: req.body.highlight,
       comments: req.body.comments,
-      RaceId: req.params.id,
+      RaceId: req.body.id,
     }).then(function () {
-      res.redirect('/race/:id');
+      res.redirect('/race/' + req.body.overall_rating);
     });
   });
 };
