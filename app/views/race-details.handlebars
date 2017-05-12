@@ -9,11 +9,11 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-      <a class="navbar-brand" href="#">RaceTrack</a>
+      <a class="navbar-brand" href="/">RaceTrack</a>
     </div>
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li class="active"><a href="#">Home</a></li>
+        <li class="active"><a href="/">Home</a></li>
       </ul>
     </div>
     <!--/.nav-collapse -->
@@ -32,7 +32,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-8 race-details">
+    <div class="col-md-8 race-details" data-city="{{this.city}}" data-month="{{this.month}}">
       <!--img src="logo-test.jpg"-->
       {{#each Race}}
       <h1>{{this.race_name}}</h1>

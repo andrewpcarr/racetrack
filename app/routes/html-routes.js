@@ -24,8 +24,16 @@ module.exports = function (app) {
   app.post("/search", function (req, res) {
     if (req.body.race_name === '' && req.body.race_name === '' && req.body.city === '' && req.body.distance === '' && req.body.race_month === '' && req.body.swim_start === '') {
       // show em all!
-      db.Race.findAll({}).then(function (data) {
-        res.render('results', { Race: data });
+      db.Race.findAll({
+        include: [db.Review]
+      }).then(function (data) {
+        var overall = data[0].Reviews;
+        var overallRtg = getAverage(overall);
+        var raceObj = {
+          Race: data,
+          Total: overallRtg
+        };
+        res.render('results', raceObj);
       });
     } else {
       db.Race.findAll({
@@ -54,9 +62,16 @@ module.exports = function (app) {
                 $eq: req.body.swim_start
               }
             }]
-        }
+        },
+        include: [db.Review]
       }).then(function (data) {
-        res.render('results', { Race: data });
+        var overall = data[0].Reviews;
+        var overallRtg = getAverage(overall);
+        var raceObj = {
+          Race: data,
+          Total: overallRtg
+        };
+        res.render('results', raceObj);
       });
     }
   });
@@ -111,7 +126,7 @@ module.exports = function (app) {
     };
     ratingsArr.push(ratingsObj);
     console.log("Ratings array: " + JSON.stringify(ratingsArr));
-    //return avgRating; 
+    //return avgRating;
     return ratingsArr;
   }
 

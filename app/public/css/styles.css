@@ -1,1 +1,68 @@
-/* Styles go here */
+body {
+  background-color: rgba(200, 200, 200, 1.0);
+  font-family: 'Oswald', sans-serif;
+  height: auto;
+  font-size:12px;
+}
+
+/**JN RESPONSIVE TYPOGRAPHY**/
+
+a {
+  transition:color .3s ease-in-out;
+}
+
+a:hover {
+  text-decoration:none;
+}
+
+h1,h2,h3,h4 {
+  margin:0 0 15px;
+}
+
+h1 {
+  font-size:24px;
+}
+
+h2 {
+  font-size:18px;
+}
+
+h3 {
+  font-size:15px;
+}
+
+h4 {
+  font-size:13px;
+}
+
+@media screen and (min-width:768px) {
+  body {
+    font-size:14px;
+  }
+
+  h1 {
+    font-size:30px;
+  }
+
+  h2 {
+    font-size:24px;
+  }
+
+  h3 {
+    font-size:18px;
+  }
+
+  h4 {
+    font-size:16px;
+  }
+}
+
+@media screen and (min-width:992px) {
+  h1 {
+    font-size:36px;
+  }
+
+  h2 {
+    font-size:30px;
+  }
+}

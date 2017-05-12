@@ -1,30 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-   <!-- I made a quick change -->
    <meta charset="UTF-8">
-   <title>Racetrack | Online Reviews of Triathlons</title>
-   <!--Add custom fonts right here -->
-   <!-- Use openSans or something basic(Like Oswald) -->
-   <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Montserrat" rel="stylesheet">
-   <!-- ************************** -->
-   <!-- using bootstrap -->
+   <title>RaceTrack | Race Reviews</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+   <!-- Gooele Fonts -->
+   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald" rel="stylesheet">
+   <!-- Font Awesome -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
    <!-- Latest compiled and minified CSS -->
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
    <!-- Optional theme -->
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-   <!-- Custom Theme -->
-   <link rel="stylesheet" type="text/css" href="css/race_style.css">
-   <!-- jquery -->
+   <!-- jQuery -->
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
    <!-- Latest compiled and minified JavaScript -->
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+   <!-- BASE STYLES -->
+   <!-- Race Details CSS -->
+   <link rel="stylesheet" type="text/css" href="/css/style.css">
+   <!-- Custom Theme -->
+   <link rel="stylesheet" type="text/css" href="css/race_style.css">
  </head>
  <body>
  <!-- Header give a title with a little styling -->
-   <div class"navbar-fixed-top Landing-Header">
-     <H2 id="header-text"> RACETRACK The Search Portal For Trathlons
-   </div>
+   <div class="navbar-fixed-top landing-header">
+      <h2 id="header-text"> RACETRACK The Search Portal For Triathlons</h2>
+    </div>
    <br>
    <br>
    <div class="container">
@@ -48,21 +51,42 @@
            </span>
        </div>
        <div class="form-group input-group">
-         <input type="text" id="race_month" name="race_month" class="form-control" placeholder="Search by Month" autofocus>
+         <!-- <input type="text" id="race_month" name="race_month" class="form-control" placeholder="Search by Month" autofocus>
          <span class="input-group-btn">
            <button class="btn btn-primary" type="submit">Go!</button>
-         </span>
+         </span> -->
+         <select type="text" id="race_month" name="race_month" class="form-control" autofocus>
+           <option>Choose a Month</option>
+           <option>January</option>
+           <option>February</option>
+           <option>March</option>
+           <option>April</option>
+           <option>June</option>
+           <option>July</option>
+           <option>August</option>
+           <option>September</option>
+           <option>October</option>
+           <option>November</option>
+           <option>December</option>
+         </select>
        </div>
        <div class="form-group input-group">
-         <input type="text" id="swim_start" name="swim_start" class="form-control" placeholder="Start with a Swim?" autofocus>
+         <!-- <input type="text" id="swim_start" name="swim_start" class="form-control" placeholder="Start with a Swim?" autofocus>
          <span class="input-group-btn">
            <button class="btn btn-primary" type="submit">Go!</button>
-         </span>
+         </span> -->
+         <select type="text" id="swim_start" name="swim_start" class="form-control" required autofocus>
+           <option>Swim Start</option>
+           <option>Time Trial</option>
+           <option>Waves: From Shore</option>
+           <option>Waves: Deep Water</option>
+           <option>Mass Start</option>
+         </select>
        </div>
      </form>
-     <div class="footer navbar-fixed-bottom">
+     <!-- <div class="footer navbar-fixed-bottom">
        <a href="/api/races">/api/races</a>
-     </div>
+     </div> -->
    </div>
  </body>
 </html>

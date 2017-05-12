@@ -3,8 +3,9 @@ body {
     background-image: url("../images/triathlon_water.jpeg");
 }
 
+/**LANDING PAGE**/
 /* Custom CSS for header on landing page */
-.Landing-Header{  
+.landing-header{
     background: linear-gradient(to bottom, rgba(175, 255, 255, 222), rgba(0, 0, 0, 0));
     opacity: .84;
 }
@@ -14,4 +15,3 @@ body {
     color: black;
     ;
 }
-
