@@ -42,6 +42,7 @@ h4 {
 .btn {
   transition:all .3s ease-in-out;
   font-family:'Oswald', sans-serif;
+  text-shadow:none;
 }
 
 .btn-primary {
