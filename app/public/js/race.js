@@ -118,6 +118,8 @@ var chanceWindy;
           chanceWindy=res.trip.chance_of.chanceofwindyday;
      console.log("test to see if this working? " + "Chance of Humid Day: " + chanceHumid.name + ", " +
      chanceHumid.percentage + " percent");
+     $('#weather-div').html("Chance of Humid Day: " +
+     chanceHumid.percentage + "%");
           });
   }
 getWeather();
