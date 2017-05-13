@@ -119,3 +119,8 @@ var chanceWindy;
           });
   }
 getWeather();
+
+$('footer a:last').on('click', function() {
+  e.preventDefault();
+  window.location.replace("localhost:8080/api/race");
+});
