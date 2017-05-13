@@ -22,16 +22,16 @@ module.exports = function (app) {
   // Shows users the results of their race search
 
   app.post("/search", function (req, res) {
-    if (req.body.race_name === '' && req.body.race_name === '' && req.body.city === '' && req.body.distance === '' && req.body.race_month === '' && req.body.swim_start === '') {
+    if (req.body.race_name === '' && req.body.race_name === '' && req.body.city === '' && req.body.distance === '' && req.body.race_month === 'Choose a Month' && req.body.swim_start === 'Swim Start') {
       // show em all!
       db.Race.findAll({
         include: [db.Review]
       }).then(function (data) {
-        var overall = data[0].Reviews;
-        var overallRtg = getAverage(overall);
+       // var overall = data[0].Reviews;
+        //var overallRtg = getAverage(overall);
         var raceObj = {
-          Race: data,
-          Total: overallRtg
+          Race: data
+          //Total: overallRtg
         };
         res.render('results', raceObj);
       });
@@ -86,19 +86,19 @@ module.exports = function (app) {
       var overall = data[0].Reviews;
       // console.log("these are the Reviews: " + JSON.stringify(data[0].Reviews[0]));
       var overallRtg = getAverage(overall);
-      console.log("Do we have an Average? " + overallRtg);
+      console.log("Do we have an Average? " + JSON.stringify(overallRtg));
       var raceObj = {
         Race: data,
         Total: overallRtg
       };
-      console.log("Are we getting any results? " + JSON.stringify(raceObj));
+      //console.log("Are we getting any results? " + JSON.stringify(raceObj));
       res.render("race-details", raceObj);
     });
   });
 
   //function to get average of overall ratings + to get the percentage of users who would do race again
   function getAverage(ratings) {
-    console.log("Are these ratings coming through???? " + JSON.stringify(ratings));
+   // console.log("Are these ratings coming through???? " + JSON.stringify(ratings));
     var ratingsArr = [];
     var count = ratings.length;
     var sum = 0;
@@ -125,7 +125,7 @@ module.exports = function (app) {
       totalRec: [recAvg, norecAvg]
     };
     ratingsArr.push(ratingsObj);
-    console.log("Ratings array: " + JSON.stringify(ratingsArr));
+   // console.log("Ratings array: " + JSON.stringify(ratingsArr));
     //return avgRating;
     return ratingsArr;
   }

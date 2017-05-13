@@ -1,3 +1,5 @@
+$(document).ready(function() {
+
 $(function() {
   // $('.review-race').on('click', function() {
   //   $('.modal').fadeIn(500);
@@ -119,3 +121,6 @@ var chanceWindy;
           });
   }
 getWeather();
+
+
+}) // end of doc  ready

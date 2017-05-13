@@ -1,6 +1,6 @@
 use racetrack_db;
 
-INSERT INTO Race (race_name, city, state, country, venue, distance, race_month, water_type, swim_start, bike_course, run_type, women_only) VALUES
+INSERT INTO Race (race_name, city, state, country, venue, distance, race_month, water_type, swim_start, bike_course, run_type, women_only, logo) VALUES
 ("Rookie", "Austin", "TX", "USA", "Decker Lake", "Super-Sprint", "May", "Fresh", "Waves: From Shore", "Closed",
 "Trail", false, "http://www.old.highfiveevents.com/images/rookie-logo.jpg"),
 ("Tri Rock", "Austin", "TX", "USA", "Auditorium Shores", "Sprint", "September", "Fresh", "Time Trial", "Closed",
