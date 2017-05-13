@@ -93,6 +93,7 @@ module.exports = function (app) {
         Race: data,
         Total: overallRtg
       };
+      console.log(raceObj.Race);
       //console.log("Are we getting any results? " + JSON.stringify(raceObj));
       res.render("race-details", raceObj);
     });
@@ -153,9 +154,9 @@ module.exports = function (app) {
       race_again: boolean,
       highlight: req.body.highlight,
       comments: req.body.comments,
-      RaceId: 1,
+      RaceId: req.params.id,
     }).then(function () {
-      res.redirect('/race/' + 1);
+      res.redirect('/race/' + req.params.id);
     });
   });
 };
