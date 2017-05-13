@@ -28,17 +28,11 @@ module.exports = function (app) {
         include: [db.Review]
       }).then(function (data) {
         console.log("Show the data! +++++++++++++++++++");
-       /* for(var i = 0; i < data.length; i++){
-          console.log("race ID: "+data[i].Reviews);
-            for(var i = 0; i data.length; i++){
-
-            }
-        }*/
-       // var overall = data[0].Reviews;
-        //var overallRtg = getAverage(overall);
+        var overall = data;
+        var overallRtg = getAverage(overall);
         var raceObj = {
-          Race: data
-          //Total: overallRtg
+          Race: data,
+          Total: overallRtg
         };
         res.render('results', raceObj);
       });
@@ -72,13 +66,11 @@ module.exports = function (app) {
         },
         include: [db.Review]
       }).then(function (data) {
-        console.log("Show me the data!");
-        console.log(data[0].Reviews);
-        var overall = data[0].Reviews;
-        var overallRtg = getAverage(overall);
+        // var overall = data;
+        // var overallRtg = getAverage(overall);
         var raceObj = {
-          Race: data,
-          Total: overallRtg
+          Race: data
+          // Total: overallRtg
         };
         res.render('results', raceObj);
       });
@@ -86,18 +78,17 @@ module.exports = function (app) {
   });
 
   app.get("/race/:id", function (req, res) {
-    console.log("GEtting race parameters!");
     db.Race.findAll({
       where: {
         id: req.params.id,
       },
       include: [db.Review]
     }).then(function (data) {
-      console.log(data[0].Reviews);
-      var overall = data[0].Reviews;
-      // console.log("these are the Reviews: " + JSON.stringify(data[0].Reviews[0]));
+      //console.log(JSON.stringify(data)); 
+      var overall = data;
+      // console.log("these are the Reviews: " + JSON.stringify(data));
       var overallRtg = getAverage(overall);
-      console.log("Do we have an Average? " + JSON.stringify(overallRtg));
+      //console.log("Do we have an Average? " + JSON.stringify(overallRtg));
       var raceObj = {
         Race: data,
         Total: overallRtg
@@ -107,40 +98,36 @@ module.exports = function (app) {
     });
   });
 
-  //function to get average of overall ratings + to get the percentage of users who would do race again
-  function getAverage(ratings) {
-   // console.log("Are these ratings coming through???? " + JSON.stringify(ratings));
+  //function to get average of overall ratings 
+  function getAverage(searchResults) {
+    console.log("Are these ratings coming through???? " + JSON.stringify(searchResults));
     var ratingsArr = [];
-    var count = ratings.length;
-    var sum = 0;
-    for (var i = 0; i < ratings.length; i++) {
-      id = ratings[i].RaceId;
-      sum = sum + ratings[i].overall;
-    };
-    var recommend = 0;
-    var dontdoit = 0;
-    for (var i = 0; i < ratings.length; i++) {
-      if (ratings[i].race_again === true) {
-        recommend++
-      } else {
-        dontdoit++
-      }
-    };
-    var recAvg = recommend / count;
-    var norecAvg = dontdoit / count;
+    var numberRaces = searchResults.length;
 
-    var avgRating = Math.round(sum / count * 100) / 100;
-    var ratingsObj = {
-      id: ratings[0].RaceId,
-      totalScore: avgRating,
-      totalRec: [recAvg, norecAvg]
-    };
-    ratingsArr.push(ratingsObj);
-   // console.log("Ratings array: " + JSON.stringify(ratingsArr));
-    //return avgRating;
+    for (var i = 0; i < searchResults.length; i++) {
+
+      var raceReviews = searchResults[i].Reviews;
+      var count = raceReviews.length;
+      var sum = 0;
+      var averages = [];
+      for (var j = 0; j < raceReviews.length; j++) {
+
+        sum = sum + raceReviews[j].overall;
+        var avgRating = Math.round(sum / count * 100) / 100;
+
+      };
+      averages.push(avgRating);
+      var ratingsObj = {
+        id: searchResults[i].id,
+        totalScore: averages
+      };
+      ratingsArr.push(ratingsObj);
+    }
+    console.log("Ratings array: " + JSON.stringify(ratingsArr));
     return ratingsArr;
-  }
-  
+  };
+
+
   app.post("/race/:id", function (req, res) {
     console.log(req.params.id);
     let raceAgain = req.body.race_again;
