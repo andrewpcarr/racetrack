@@ -1,4 +1,4 @@
-# racetrack
+# RaceTrack
 A full-stack web app that allows users to search, review, and explore triathlons from across the world! 
 
 Built for triathletes by triathletes.
