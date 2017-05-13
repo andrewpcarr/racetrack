@@ -123,4 +123,6 @@ var chanceWindy;
 getWeather();
 
 
+
 }) // end of doc  ready
+
