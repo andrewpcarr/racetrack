@@ -1,7 +1,6 @@
 use racetrack_db;
 
-<<<<<<< HEAD
-INSERT INTO Race (race_name, city, state, country, venue, distance, race_month, water_type, swim_start, bike_course, run_type, women_only) VALUES
+INSERT INTO Race (race_name, city, state, country, venue, distance, race_month, water_type, swim_start, bike_course, run_type, women_only, logo) VALUES
 ("Rookie", "Austin", "TX", "USA", "Decker Lake", "Super-Sprint", "May", "Fresh", "Waves: From Shore", "Closed",
 "Trail", false, "http://www.old.highfiveevents.com/images/rookie-logo.jpg"),
 ("Tri Rock", "Austin", "TX", "USA", "Auditorium Shores", "Sprint", "September", "Fresh", "Time Trial", "Closed",
@@ -21,4 +20,4 @@ INSERT INTO Race (race_name, city, state, country, venue, distance, race_month, 
 ("LavaMan", "Waikoloa", "HI", "USA", "Anaehoomalu Bay", "Intermediate", "April", "Ocean", "Waves: From Shore", "Open",
 "Trail", false, "http://konabrewersfestival.com/wp-content/uploads/5Supporting_Lavaman_web.jpg"),
 ("Kerrville Triathlon Half", "Kerrville", "TX", "USA", "Nimitz Lake", "Half", "September", "Fresh", "Waves: From Shore", "Open",
-"Road", false);
+"Road", false, "https://raceraves.com/wp-content/uploads/2015/07/kerville-triathlon-festival-1-2.jpg");

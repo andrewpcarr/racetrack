@@ -51,6 +51,7 @@ module.exports = function (sequelize, DataTypes) {
   },
     {
       // We're saying that we want our Races to have Reviews
+      timestamps: false,
       classMethods: {
         associate: function (models) {
           // A Race (foreignKey) is required or a Review can't be made
