@@ -27,6 +27,13 @@ module.exports = function (app) {
       db.Race.findAll({
         include: [db.Review]
       }).then(function (data) {
+        console.log("Show the data! +++++++++++++++++++");
+       /* for(var i = 0; i < data.length; i++){
+          console.log("race ID: "+data[i].Reviews);
+            for(var i = 0; i data.length; i++){
+
+            }
+        }*/
        // var overall = data[0].Reviews;
         //var overallRtg = getAverage(overall);
         var raceObj = {
@@ -65,6 +72,8 @@ module.exports = function (app) {
         },
         include: [db.Review]
       }).then(function (data) {
+        console.log("Show me the data!");
+        console.log(data[0].Reviews);
         var overall = data[0].Reviews;
         var overallRtg = getAverage(overall);
         var raceObj = {
@@ -77,12 +86,14 @@ module.exports = function (app) {
   });
 
   app.get("/race/:id", function (req, res) {
+    console.log("GEtting race parameters!");
     db.Race.findAll({
       where: {
         id: req.params.id,
       },
       include: [db.Review]
     }).then(function (data) {
+      console.log(data[0].Reviews);
       var overall = data[0].Reviews;
       // console.log("these are the Reviews: " + JSON.stringify(data[0].Reviews[0]));
       var overallRtg = getAverage(overall);
@@ -118,7 +129,7 @@ module.exports = function (app) {
     var recAvg = recommend / count;
     var norecAvg = dontdoit / count;
 
-    var avgRating = sum / count;
+    var avgRating = Math.round(sum / count * 100) / 100;
     var ratingsObj = {
       id: ratings[0].RaceId,
       totalScore: avgRating,
@@ -129,7 +140,7 @@ module.exports = function (app) {
     //return avgRating;
     return ratingsArr;
   }
-
+  
   app.post("/race/:id", function (req, res) {
     console.log(req.params.id);
     let raceAgain = req.body.race_again;
