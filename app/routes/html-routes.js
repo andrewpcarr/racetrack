@@ -145,7 +145,7 @@ module.exports = function (app) {
     console.log(req.params.id);
     let raceAgain = req.body.race_again;
     let boolean;
-    if (raceAgain === 'Absolutely!') {
+    if (raceAgain === 'Hell yeah!') {
       boolean = 1;
     } else {
       boolean = 0;
@@ -162,13 +162,13 @@ module.exports = function (app) {
       road_surface: req.body.road_surface,
       run_hills: req.body.run_hills,
       run_shade: req.body.run_shade,
-      overall_rating: req.body.overall_rating,
+      overall: req.body.overall,
       race_again: boolean,
       highlight: req.body.highlight,
       comments: req.body.comments,
-      RaceId: req.body.id,
+      RaceId: 1,
     }).then(function () {
-      res.redirect('/race/' + req.body.overall_rating);
+      res.redirect('/race/' + 1);
     });
   });
 };
