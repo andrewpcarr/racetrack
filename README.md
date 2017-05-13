@@ -1,13 +1,9 @@
 # racetrack
-A back-end web app that allows users to search and rate triathlons from across the world.
+A full-stack web app that allows users to search, review, and explore triathlons from across the world! 
 
+Built for triathletes by triathletes.
 
-Things done so far:
-  *Seed database for races and user reviews.
-
-Things that need to be done.
-  *The html markup
-  *CSS markup
-  *The server
-  
-  *everything else.
+## Features
+- Search races by name, city, race length, month, or swim type.
+- Check out users' full written reviews and category ratings for various events.
+- Leave your own race reviews and help contribute to the tri community!
