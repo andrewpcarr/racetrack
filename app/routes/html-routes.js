@@ -151,13 +151,13 @@ module.exports = function (app) {
       road_surface: req.body.road_surface,
       run_hills: req.body.run_hills,
       run_shade: req.body.run_shade,
-      overall_rating: req.body.overall_rating,
+      overall: req.body.overall,
       race_again: boolean,
       highlight: req.body.highlight,
       comments: req.body.comments,
       RaceId: req.body.id,
     }).then(function () {
-      res.redirect('/race/' + req.body.overall_rating);
+      res.redirect('/race/' + req.params.id);
     });
   });
 };
