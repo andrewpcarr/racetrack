@@ -155,9 +155,9 @@ module.exports = function (app) {
       race_again: boolean,
       highlight: req.body.highlight,
       comments: req.body.comments,
-      RaceId: req.body.id,
+      RaceId: 1,
     }).then(function () {
-      res.redirect('/race/' + req.params.id);
+      res.redirect('/race/' + 1);
     });
   });
 };
