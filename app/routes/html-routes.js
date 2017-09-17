@@ -29,10 +29,10 @@ module.exports = function (app) {
       }).then(function (data) {
         console.log("Show the data! +++++++++++++++++++");
         var overall = data;
-        var overallRtg = getAverage(overall);
+       // var overallRtg = getAverage(overall);
         var raceObj = {
-          Race: data,
-          Total: overallRtg
+          Race: data
+         // Total: overallRtg
         };
         res.render('results', raceObj);
       });
