@@ -47,7 +47,7 @@ require("./app/routes/race-routes.js")(app);
 // Syncing our sequelize models and then starting our express app
 //TH NOTE--I removed the "force: true" from the sync so that it wouldn't keep clearing out
 //our pre-seeded tables
-db.sequelize.sync({ }).then(function() {
+db.sequelize.sync({}).then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });

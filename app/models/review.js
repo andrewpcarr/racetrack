@@ -1,4 +1,4 @@
-module.exports = function (sequelize, DataTypes) {
+module.exports = function(sequelize, DataTypes) {
   var Review = sequelize.define("Review", {
     id: {
       type: DataTypes.INTEGER,
@@ -28,8 +28,7 @@ module.exports = function (sequelize, DataTypes) {
     },
     road_surface: {
       type: DataTypes.INTEGER
-    }
-    ,
+    },
     run_hills: {
       type: DataTypes.INTEGER
     },
@@ -48,21 +47,19 @@ module.exports = function (sequelize, DataTypes) {
     comments: {
       type: DataTypes.TEXT
     }
-  },
-    {
-      // We're saying that we want our Races to have Reviews
-      timestamps: false,
-      classMethods: {
-        associate: function (models) {
-          // A Race (foreignKey) is required or a Review can't be made
-          Review.belongsTo(models.Race, {
-            foreignKey: {
-              allowNull: false
-            }
-          });
-        }
+  }, {
+    // We're saying that we want our Races to have Reviews
+    timestamps: false,
+    classMethods: {
+      associate: function(models) {
+        // A Race (foreignKey) is required or a Review can't be made
+        Review.belongsTo(models.Race, {
+          foreignKey: {
+            allowNull: false
+          }
+        });
       }
     }
-  );
+  });
   return Review;
 };

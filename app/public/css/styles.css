@@ -2,122 +2,124 @@ body {
   background-color: #e3e3e3;
   font-family: 'open sans', sans-serif;
   height: auto;
-  font-size:12px;
+  font-size: 12px;
 }
 
 /**JN RESPONSIVE TYPOGRAPHY**/
-
 a {
-  color:#113D63;
-  transition:color .3s ease-in-out;
+  color: #113D63;
+  transition: color .3s ease-in-out;
 }
 
 a:hover {
-  color:#397500;
-  text-decoration:none;
+  color: #397500;
+  text-decoration: none;
 }
 
-h1,h2,h3,h4 {
-  margin:0 0 15px;
-  color:#113D63;
-  font-family:'Oswald', sans-serif;
+h1,
+h2,
+h3,
+h4 {
+  margin: 0 0 15px;
+  color: #113D63;
+  font-family: 'Oswald', sans-serif;
 }
 
 h1 {
-  font-size:24px;
+  font-size: 24px;
 }
 
 h2 {
-  font-size:18px;
+  font-size: 18px;
 }
 
 h3 {
-  font-size:15px;
+  font-size: 15px;
 }
 
 h4 {
-  font-size:13px;
+  font-size: 13px;
 }
 
 .btn {
-  transition:all .3s ease-in-out;
-  font-family:'Oswald', sans-serif;
-  text-shadow:none;
+  transition: all .3s ease-in-out;
+  font-family: 'Oswald', sans-serif;
+  text-shadow: none;
 }
 
 .btn-primary {
-  background-image:none;
-  background:#397500;
-  border-color:#499500;
+  background-image: none;
+  background: #397500;
+  border-color: #499500;
 }
 
 .btn-primary:hover {
-  background:#113D63;
-  border-color:#549DDD;
+  background: #113D63;
+  border-color: #549DDD;
 }
 
 .btn-warning {
-  background-image:none;
-  background:#499500;
-  border-color:#397500;
+  background-image: none;
+  background: #499500;
+  border-color: #397500;
 }
 
 .btn-warning:hover {
-  background:#D7AC23;
-  border-color:#113D63;
+  background: #D7AC23;
+  border-color: #113D63;
 }
 
 .label-primary {
-  background:#113D63;
+  background: #113D63;
 }
 
 .label-warning {
-  background:#D7AC23;
+  background: #D7AC23;
 }
 
 .label-default {
-  background:#397500;
+  background: #397500;
 }
 
 .badge {
-  background:#fff;
-  color:#113D63;
+  background: #fff;
+  color: #113D63;
 }
 
 .footer {
-  border-top:1px solid #f1f1f1;
-  padding-top:30px;
-  padding-bottom:30px;
+  border-top: 1px solid #f1f1f1;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 @media screen and (min-width:768px) {
   body {
-    font-size:14px;
+    font-size: 14px;
   }
 
   h1 {
-    font-size:30px;
+    font-size: 30px;
   }
 
   h2 {
-    font-size:24px;
+    font-size: 24px;
   }
 
   h3 {
-    font-size:18px;
+    font-size: 18px;
   }
 
   h4 {
-    font-size:16px;
+    font-size: 16px;
   }
 }
 
 @media screen and (min-width:992px) {
   h1 {
-    font-size:36px;
+    font-size: 36px;
   }
 
   h2 {
-    font-size:30px;
+    font-size: 30px;
   }
 }

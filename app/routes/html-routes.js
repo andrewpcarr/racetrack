@@ -10,37 +10,34 @@ var db = require("../models");
 
 // Routes
 // =============================================================
-module.exports = function (app) {
-
+module.exports = function(app) {
   // Each of the below routes just handles the HTML page that the user gets sent to.
-
   // This route is for the landing page/search page
-  app.get("/", function (req, res) {
+  app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/race.html"));
   });
 
   // Shows users the results of their race search
 
-  app.post("/search", function (req, res) {
+  app.post("/search", function(req, res) {
     if (req.body.race_name === '' && req.body.race_name === '' && req.body.city === '' && req.body.distance === '' && req.body.race_month === 'Choose a Month' && req.body.swim_start === 'Swim Start') {
       // show em all!
       db.Race.findAll({
         include: [db.Review]
-      }).then(function (data) {
+      }).then(function(data) {
         console.log("Show the data! +++++++++++++++++++");
         var overall = data;
-       // var overallRtg = getAverage(overall);
+        // var overallRtg = getAverage(overall);
         var raceObj = {
           Race: data
-         // Total: overallRtg
+          // Total: overallRtg
         };
         res.render('results', raceObj);
       });
     } else {
       db.Race.findAll({
         where: {
-          $or: [
-            {
+          $or: [{
               race_name: {
                 $eq: req.body.race_name
               }
@@ -62,10 +59,11 @@ module.exports = function (app) {
               swim_start: {
                 $eq: req.body.swim_start
               }
-            }]
+            }
+          ]
         },
         include: [db.Review]
-      }).then(function (data) {
+      }).then(function(data) {
         // var overall = data;
         // var overallRtg = getAverage(overall);
         var raceObj = {
@@ -77,13 +75,13 @@ module.exports = function (app) {
     }
   });
 
-  app.get("/race/:id", function (req, res) {
+  app.get("/race/:id", function(req, res) {
     db.Race.findAll({
       where: {
         id: req.params.id,
       },
       include: [db.Review]
-    }).then(function (data) {
+    }).then(function(data) {
       //console.log(JSON.stringify(data)); 
       var overall = data;
       // console.log("these are the Reviews: " + JSON.stringify(data));
@@ -128,8 +126,7 @@ module.exports = function (app) {
     return ratingsArr;
   };
 
-
-  app.post("/race/:id", function (req, res) {
+  app.post("/race/:id", function(req, res) {
     console.log(req.params.id);
     let raceAgain = req.body.race_again;
     let boolean;
@@ -155,7 +152,7 @@ module.exports = function (app) {
       highlight: req.body.highlight,
       comments: req.body.comments,
       RaceId: req.params.id,
-    }).then(function () {
+    }).then(function() {
       res.redirect('/race/' + req.params.id);
     });
   });
