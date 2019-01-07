@@ -18,7 +18,6 @@ module.exports = function(app) {
   });
 
   // Shows users the results of their race search
-
   app.post("/search", function(req, res) {
     if (req.body.race_name === '' && req.body.race_name === '' && req.body.city === '' && req.body.distance === '' && req.body.race_month === 'Choose a Month' && req.body.swim_start === 'Swim Start') {
       // show em all!

@@ -60,7 +60,6 @@
 }
 
 /* CSS for the star rating */
-
 div.stars {
   width: 270px;
   display: inline-block;
@@ -148,8 +147,6 @@ label.star:before {
 }
 
 /* Modal CSS */
-/* Modal CSS */
-
 .modal {
   display: none;
 }
