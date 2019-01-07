@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  var Race = sequelize.define("Race", {
+  const Race = sequelize.define("Race", {
       // Giving the Race model a name of type STRING
       race_name: {
         type: DataTypes.STRING,
